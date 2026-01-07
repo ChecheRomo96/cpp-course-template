@@ -133,17 +133,23 @@ jobs:
       # --------------------------------------------------
       # Unit test HTML report (supports gtest.xml OR CTest XML)
       # --------------------------------------------------
+      # --------------------------------------------------
+      # Unit test HTML report (gtest XML, CTest XML, or LastTest.log)
+      # --------------------------------------------------
       - name: Generate unit test report
         run: |
           set -euxo pipefail
           python3 - << 'PY'
           import xml.etree.ElementTree as ET
           from pathlib import Path
+          import re
 
           repo_root = Path(".").resolve()
           tests = []
 
-          # 1) Prefer a gtest.xml (if you later add a UnitTests binary)
+          # --------------------------------------------------
+          # 1) Intentar gtest.xml (si algún ejecutable lo genera)
+          # --------------------------------------------------
           gtest_xml = None
           for cand in [repo_root / "gtest.xml", repo_root / "build" / "gtest.xml"]:
               if cand.exists():
@@ -159,11 +165,14 @@ jobs:
                       full = f"{sname}.{tname}" if sname else tname
                       failed = (tc.find("failure") is not None) or (tc.find("error") is not None)
                       tests.append((full, not failed))
-          else:
-              # 2) Fall back to CTest XML: build/Testing/*/Test.xml
+
+          # --------------------------------------------------
+          # 2) Intentar CTest Test.xml (modo dashboard)
+          # --------------------------------------------------
+          if not tests:
               ctest_xmls = sorted(repo_root.glob("build/Testing/*/Test.xml"))
               if ctest_xmls:
-                  xml_path = ctest_xmls[-1]  # latest run
+                  xml_path = ctest_xmls[-1]  # el más reciente
                   root = ET.parse(xml_path).getroot()
                   for t in root.findall(".//Test"):
                       name_el = t.find("Name")
@@ -171,6 +180,23 @@ jobs:
                       status = t.get("Status", "").lower()
                       ok = (status == "passed")
                       tests.append((name, ok))
+
+          # --------------------------------------------------
+          # 3) Fallback: parsear CTest LastTest.log
+          # --------------------------------------------------
+          if not tests:
+              log_path = repo_root / "build" / "Testing" / "Temporary" / "LastTest.log"
+              if log_path.exists():
+                  text = log_path.read_text(encoding="utf-8", errors="ignore")
+                  for line in text.splitlines():
+                      # Ejemplo de línea:
+                      # " 1/2 Test #1: LectureExample_unitTests ...   Passed"
+                      m = re.search(r"Test\s+#\d+:\s+(\S+).*(Passed|Failed|Timeout|Not Run)", line)
+                      if m:
+                          name = m.group(1)
+                          status = m.group(2).lower()
+                          ok = (status == "passed")
+                          tests.append((name, ok))
 
           total = len(tests)
           passed = sum(1 for _, ok in tests if ok)
@@ -201,6 +227,7 @@ jobs:
           out = Path("site/unit_tests/index.html")
           out.write_text(html, encoding="utf-8")
           PY
+
 
       # --------------------------------------------------
       # Debug: show flags and coverage files (helps if it breaks)
