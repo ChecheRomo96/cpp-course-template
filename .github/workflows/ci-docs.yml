@@ -5,13 +5,9 @@ on:
     branches: ["main"]
   pull_request:
 
-# Needed so the gh-pages publish step can push
 permissions:
   contents: write
 
-# Default guard behavior:
-# - In forks, vars.COURSE_GUARD_ENABLED does not exist -> defaults to 'true'
-# - In upstream, you can define repo variable COURSE_GUARD_ENABLED='false' to disable
 env:
   COURSE_GUARD_ENABLED: ${{ vars.COURSE_GUARD_ENABLED || 'true' }}
 
@@ -90,7 +86,7 @@ jobs:
             -DCMAKE_BUILD_TYPE=Debug
 
       - name: Build
-        run: cmake --build build
+        run: cmake --build build --parallel
 
       # --------------------------------------------------
       # HARD ASSERT: coverage instrumentation exists
@@ -107,26 +103,23 @@ jobs:
           fi
 
       # --------------------------------------------------
-      # Run tests with ctest (generate gcda + XML)
+      # Run tests (ctest) – generates gcda + CTest XML
       # --------------------------------------------------
-      - name: Run tests with ctest
+      - name: Run tests (ctest)
         run: |
           set -euxo pipefail
           cd build
-          # Ejecuta los tests y genera reporte JUnit en ../ctest-report.xml
-          ctest --output-on-failure --output-junit ../ctest-report.xml
+          ctest --output-on-failure
 
-      # --------------------------------------------------
-      # Check gcda exists (runtime)
-      # --------------------------------------------------
-      - name: Check gcda exists (runtime)
+      - name: Assert gcda exists (runtime)
         run: |
           set -euxo pipefail
           GCDA_COUNT="$(find build -name '*.gcda' | wc -l)"
           echo "GCDA_COUNT=$GCDA_COUNT"
           find build -name '*.gcda' | head -n 30 || true
           if [ "$GCDA_COUNT" -eq 0 ]; then
-            echo "WARNING: No .gcda files found. No tests executed or no coverage data yet."
+            echo "ERROR: No .gcda files found. Tests executed but no coverage data produced."
+            exit 1
           fi
 
       # --------------------------------------------------
@@ -138,54 +131,60 @@ jobs:
           mkdir -p site/unit_tests site/coverage site/doxygen
 
       # --------------------------------------------------
-      # Unit test HTML report (a partir de ctest-report.xml)
+      # Unit test HTML report (supports gtest.xml OR CTest XML)
       # --------------------------------------------------
       - name: Generate unit test report
         run: |
           set -euxo pipefail
-          mkdir -p site/unit_tests
-          python3 - <<'PY'
-          from pathlib import Path
+          python3 - << 'PY'
           import xml.etree.ElementTree as ET
+          from pathlib import Path
 
-          xml_path = Path("ctest-report.xml")
+          repo_root = Path(".").resolve()
+          tests = []
 
-          if not xml_path.exists():
-              html = """<!doctype html>
-          <html>
-          <head><meta charset="utf-8"><title>Unit Tests</title></head>
-          <body>
-            <h1>Unit Tests</h1>
-            <p>No UnitTests executables or gtest XML files were found.</p>
-            <p>This page will update automatically once tests are available.</p>
-          </body>
-          </html>
-          """
-          else:
-              root = ET.parse(xml_path).getroot()
-              tests = []
+          # 1) Prefer a gtest.xml (if you later add a UnitTests binary)
+          gtest_xml = None
+          for cand in [repo_root / "gtest.xml", repo_root / "build" / "gtest.xml"]:
+              if cand.exists():
+                  gtest_xml = cand
+                  break
 
-              # Estructura JUnit: <testsuites><testsuite><testcase/></testsuite>...</testsuites>
-              for suite in root.findall("testsuite"):
+          if gtest_xml:
+              root = ET.parse(gtest_xml).getroot()
+              for suite in root.findall(".//testsuite"):
                   sname = suite.get("name", "")
                   for tc in suite.findall("testcase"):
                       tname = tc.get("name", "")
                       full = f"{sname}.{tname}" if sname else tname
-                      status = "PASS"
-                      if tc.find("failure") is not None or tc.find("error") is not None:
-                          status = "FAIL"
-                      tests.append((full, status))
+                      failed = (tc.find("failure") is not None) or (tc.find("error") is not None)
+                      tests.append((full, not failed))
+          else:
+              # 2) Fall back to CTest XML: build/Testing/*/Test.xml
+              ctest_xmls = sorted(repo_root.glob("build/Testing/*/Test.xml"))
+              if ctest_xmls:
+                  xml_path = ctest_xmls[-1]  # latest run
+                  root = ET.parse(xml_path).getroot()
+                  for t in root.findall(".//Test"):
+                      name_el = t.find("Name")
+                      name = name_el.text if name_el is not None else "(unnamed test)"
+                      status = t.get("Status", "").lower()
+                      ok = (status == "passed")
+                      tests.append((name, ok))
 
-              total = len(tests)
-              passed = sum(1 for _, status in tests if status == "PASS")
-              pct = (100.0 * passed / total) if total else 0.0
+          total = len(tests)
+          passed = sum(1 for _, ok in tests if ok)
+          pct = (100.0 * passed / total) if total else 0.0
 
+          if tests:
               rows = "\n".join(
-                  f"<tr><td><code>{name}</code></td><td>{status}</td></tr>"
-                  for name, status in tests
+                  f"<tr><td><code>{name}</code></td><td>{'PASS' if ok else 'FAIL'}</td></tr>"
+                  for name, ok in tests
               )
+          else:
+              rows = '<tr><td colspan="2"><em>No tests were discovered in this build.</em></td></tr>'
 
-              html = f"""<!doctype html>
+          html = f'''<!doctype html>
           <html>
           <head><meta charset="utf-8"><title>Unit Tests</title></head>
           <body>
@@ -197,9 +196,10 @@ jobs:
             </table>
           </body>
           </html>
-          """
+          '''
 
-          Path("site/unit_tests/index.html").write_text(html, encoding="utf-8")
+          out = Path("site/unit_tests/index.html")
+          out.write_text(html, encoding="utf-8")
           PY
 
       # --------------------------------------------------
@@ -211,10 +211,6 @@ jobs:
           sed -n '1,200p' build/CMakeFiles/LectureExample_unitTests.dir/flags.make || true
           echo "StudentExample_unitTests flags.make:"
           sed -n '1,200p' build/CMakeFiles/StudentExample_unitTests.dir/flags.make || true
-          echo "CourseLib flags.make:"
-          sed -n '1,200p' build/CMakeFiles/CourseLib.dir/flags.make || true
-          echo "StudentLib flags.make:"
-          sed -n '1,200p' build/CMakeFiles/StudentLib.dir/flags.make || true
 
       - name: Debug coverage files (gcno/gcda)
         run: |
@@ -253,7 +249,7 @@ jobs:
           lcov --directory build \
                --capture \
                --output-file coverage.info \
-               --ignore-errors mismatch \
+               --ignore-errors mismatch,unused \
                --rc geninfo_unexecuted_blocks=1
 
           lcov --remove coverage.info \
@@ -274,8 +270,10 @@ jobs:
         run: |
           set -euxo pipefail
           doxygen docs/Doxyfile
+
           OUT="docs_out/html"
           echo "Copying Doxygen output from: $OUT"
+
           if [ -d "$OUT" ]; then
             mkdir -p site/doxygen
             cp -R "$OUT"/* site/doxygen/
@@ -296,7 +294,7 @@ jobs:
           fi
 
       # --------------------------------------------------
-      # Landing page (no heredoc/EOF)
+      # Landing page
       # --------------------------------------------------
       - name: Create index page
         shell: bash
@@ -340,7 +338,7 @@ jobs:
           sed -n '1,200p' site/index.html || echo "index.html missing"
 
       # --------------------------------------------------
-      # Publish to GitHub Pages (push to gh-pages branch)
+      # Publish to GitHub Pages
       # --------------------------------------------------
       - name: Publish to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
