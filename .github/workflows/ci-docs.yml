@@ -1,22 +1,22 @@
-name: CI + Docs
+name: CI + Publish Reports
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-  workflow_dispatch:
 
+# Needed so the gh-pages publish step can push
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+# Default guard behavior:
+# - In forks, vars.COURSE_GUARD_ENABLED does not exist -> defaults to 'true'
+# - In upstream, you can define repo variable COURSE_GUARD_ENABLED='false' to disable
+env:
+  COURSE_GUARD_ENABLED: ${{ vars.COURSE_GUARD_ENABLED || 'true' }}
 
 jobs:
-  ci-and-docs:
+  build_test_publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,164 +25,270 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install dependencies (CMake, gcovr, Doxygen, Graphviz)
+      # --------------------------------------------------
+      # Guard: alumnos solo pueden modificar student/
+      # --------------------------------------------------
+      - name: "Guard: only student/ changes allowed"
+        if: env.COURSE_GUARD_ENABLED == 'true'
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE_SHA: ${{ github.event.before }}
+          PUSH_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            BASE_SHA="$PR_BASE_SHA"
+            HEAD_SHA="$PR_HEAD_SHA"
+          else
+            BASE_SHA="$PUSH_BEFORE_SHA"
+            HEAD_SHA="$PUSH_SHA"
+          fi
+
+          if [ "$BASE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            echo "Initial push detected; skipping guard."
+            exit 0
+          fi
+
+          CHANGED_FILES="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA" || true)"
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No changed files."
+            exit 0
+          fi
+
+          VIOLATIONS="$(echo "$CHANGED_FILES" | grep -vE '^student/' || true)"
+          if [ -n "$VIOLATIONS" ]; then
+            echo "ERROR: Only changes under student/ are allowed."
+            echo "$VIOLATIONS"
+            exit 1
+          fi
+
+          echo "Guard OK."
+
+      # --------------------------------------------------
+      # Tooling
+      # --------------------------------------------------
+      - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
-            cmake \
-            ninja-build \
-            gcovr \
-            doxygen \
-            graphviz
+          sudo apt-get install -y cmake g++ lcov doxygen graphviz python3
 
-      - name: Configure CMake (Debug + coverage)
+      # --------------------------------------------------
+      # Configure / Build (clean configure, coverage enabled)
+      # --------------------------------------------------
+      - name: Clean build dir
+        run: rm -rf build
+
+      - name: Configure (coverage)
         run: |
-          cmake -B build \
-            -DCMAKE_BUILD_TYPE=Debug \
-            -DENABLE_COVERAGE=ON
+          cmake -S . -B build \
+            -DENABLE_TESTING=ON \
+            -DENABLE_COVERAGE=ON \
+            -DCMAKE_BUILD_TYPE=Debug
 
       - name: Build
-        run: cmake --build build --parallel
+        run: cmake --build build
 
-      - name: Run tests (CTest) and capture output
+      # --------------------------------------------------
+      # HARD ASSERT: coverage instrumentation exists
+      # --------------------------------------------------
+      - name: Assert gcno exists (compile-time)
         run: |
-          mkdir -p docs_out
-          # Guardamos la salida de CTest en un archivo de texto
-          ctest --test-dir build --output-on-failure | tee docs_out/ctest_output.txt
+          set -euxo pipefail
+          GCNO_COUNT="$(find build -name '*.gcno' | wc -l)"
+          echo "GCNO_COUNT=$GCNO_COUNT"
+          find build -name '*.gcno' | head -n 30 || true
+          if [ "$GCNO_COUNT" -eq 0 ]; then
+            echo "ERROR: No .gcno files found. Coverage flags not applied at compile time."
+            exit 1
+          fi
 
-          # Escapamos HTML y lo metemos en un <pre> dentro de tests.html
-          {
-            echo '<!DOCTYPE html>'
-            echo '<html lang="en"><head>'
-            echo '  <meta charset="UTF-8" />'
-            echo '  <title>Unit Test Results</title>'
-            echo '  <style>body{font-family:monospace;white-space:pre-wrap;background:#111;color:#eee;padding:1rem;}</style>'
-            echo '</head><body>'
-            echo '  <h1>Unit Test Results (CTest)</h1>'
-            echo '  <hr/>'
-            echo '  <pre>'
-            # escapa &, <, >
-            sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g' docs_out/ctest_output.txt
-            echo '  </pre>'
-            echo '</body></html>'
-          } > docs_out/tests.html
-
-      - name: Generate coverage report (gcovr)
+      # --------------------------------------------------
+      # Run tests (generate gcda) + export XML
+      # --------------------------------------------------
+      - name: Run UnitTests (generate gcda)
         run: |
-          mkdir -p docs_out
-          # Reporte HTML detallado de cobertura
-          gcovr -r . --object-directory build \
-            --exclude 'course/examples' \
-            --exclude 'student/examples' \
-            --exclude 'course/tests' \
-            --exclude 'student/tests' \
-            --html-details docs_out/coverage.html
+          set -euxo pipefail
+          cd build
+          ./UnitTests --gtest_brief=1
 
-      - name: Generate Doxygen documentation
+      - name: Export gtest xml
         run: |
-          doxygen docs/Doxyfile
+          set -euxo pipefail
+          cd build
+          ./UnitTests --gtest_output=xml:../gtest.xml
 
-      - name: Generate main portal index.html
+      - name: Assert gcda exists (runtime)
         run: |
-          cat > docs_out/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="UTF-8" />
-            <title>C++ Course Template – Reports & Docs</title>
-            <style>
-              body {
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-                background: #0f172a;
-                color: #e5e7eb;
-                margin: 0;
-                padding: 2rem;
-              }
-              .card {
-                max-width: 720px;
-                margin: 0 auto;
-                background: #020617;
-                border-radius: 1rem;
-                padding: 2rem;
-                box-shadow: 0 20px 45px rgba(0,0,0,0.45);
-                border: 1px solid rgba(148,163,184,0.3);
-              }
-              h1 {
-                margin-top: 0;
-                font-size: 1.8rem;
-              }
-              p {
-                line-height: 1.6;
-              }
-              ul {
-                list-style: none;
-                padding-left: 0;
-              }
-              li {
-                margin: 0.75rem 0;
-              }
-              a {
-                color: #38bdf8;
-                text-decoration: none;
-                font-weight: 500;
-              }
-              a:hover {
-                text-decoration: underline;
-              }
-              .tag {
-                display: inline-block;
-                padding: 0.15rem 0.5rem;
-                border-radius: 999px;
-                font-size: 0.75rem;
-                background: rgba(15,23,42,0.9);
-                border: 1px solid rgba(148,163,184,0.5);
-                margin-left: 0.5rem;
-              }
-            </style>
-          </head>
+          set -euxo pipefail
+          GCDA_COUNT="$(find build -name '*.gcda' | wc -l)"
+          echo "GCDA_COUNT=$GCDA_COUNT"
+          find build -name '*.gcda' | head -n 30 || true
+          if [ "$GCDA_COUNT" -eq 0 ]; then
+            echo "ERROR: No .gcda files found. Tests executed but no coverage data produced."
+            exit 1
+          fi
+
+      # --------------------------------------------------
+      # Prepare site structure
+      # --------------------------------------------------
+      - name: Prepare site folders
+        run: |
+          rm -rf site
+          mkdir -p site/unit_tests site/coverage site/doxygen
+
+      # --------------------------------------------------
+      # Unit test HTML report
+      # --------------------------------------------------
+      - name: Generate unit test report
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          root = ET.parse("gtest.xml").getroot()
+          tests = []
+
+          for suite in root.findall("testsuite"):
+              sname = suite.get("name", "")
+              for tc in suite.findall("testcase"):
+                  tname = tc.get("name", "")
+                  full = f"{sname}.{tname}"
+                  failed = tc.find("failure") is not None
+                  tests.append((full, not failed))
+
+          total = len(tests)
+          passed = sum(1 for _, ok in tests if ok)
+          pct = (100.0 * passed / total) if total else 0.0
+
+          rows = "\n".join(
+              f"<tr><td><code>{name}</code></td><td>{'PASS' if ok else 'FAIL'}</td></tr>"
+              for name, ok in tests
+          )
+
+          html = f"""<!doctype html>
+          <html>
+          <head><meta charset="utf-8"><title>Unit Tests</title></head>
           <body>
-            <div class="card">
-              <h1>C++ Course Template — Reports & Documentation</h1>
-              <p>
-                This portal aggregates the main artifacts generated by the CI pipeline:
-                unit test results, coverage report, and API documentation.
-              </p>
-              <ul>
-                <li>
-                  <a href="./tests.html">Unit Test Results (CTest)</a>
-                  <span class="tag">CI</span>
-                </li>
-                <li>
-                  <a href="./coverage.html">Coverage Report (gcovr)</a>
-                  <span class="tag">Coverage</span>
-                </li>
-                <li>
-                  <a href="./doxygen/index.html">Doxygen Documentation</a>
-                  <span class="tag">Docs</span>
-                </li>
-              </ul>
-              <p style="margin-top:1.5rem;font-size:0.85rem;color:#9ca3af;">
-                Generated automatically by GitHub Actions. Each new push updates
-                these artifacts for this repository or fork.
-              </p>
-            </div>
+            <h1>Unit Tests</h1>
+            <p><b>Result:</b> {passed}/{total} passed ({pct:.1f}%)</p>
+            <table border="1" cellpadding="6">
+              <tr><th>Test</th><th>Status</th></tr>
+              {rows}
+            </table>
           </body>
           </html>
-          EOF
+          """
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+          Path("site/unit_tests/index.html").write_text(html, encoding="utf-8")
+          PY
+
+      # --------------------------------------------------
+      # Debug: show flags and coverage files (helps if it breaks)
+      # --------------------------------------------------
+      - name: Debug show compile flags
+        run: |
+          echo "UnitTests flags.make:"
+          sed -n '1,200p' build/CMakeFiles/UnitTests.dir/flags.make || true
+          echo "CourseLib flags.make:"
+          sed -n '1,200p' build/CMakeFiles/CourseLib.dir/flags.make || true
+          echo "StudentLib flags.make:"
+          sed -n '1,200p' build/CMakeFiles/StudentLib.dir/flags.make || true
+
+      - name: Debug coverage files (gcno/gcda)
+        run: |
+          echo "GCNO (sample):"
+          find build -name "*.gcno" | head -n 50 || true
+          echo "GCDA (sample):"
+          find build -name "*.gcda" | head -n 50 || true
+
+      # --------------------------------------------------
+      # Coverage report (lcov/genhtml)
+      # --------------------------------------------------
+      - name: Generate coverage report
+        run: |
+          set -euxo pipefail
+
+          lcov --directory build \
+               --capture \
+               --output-file coverage.info \
+               --ignore-errors mismatch \
+               --rc geninfo_unexecuted_blocks=1
+
+          lcov --remove coverage.info \
+            '/usr/*' \
+            '*/_deps/*' \
+            '*/tests/*' \
+            --output-file coverage.filtered.info \
+            --ignore-errors mismatch \
+            --rc geninfo_unexecuted_blocks=1
+
+          lcov --summary coverage.filtered.info
+          genhtml coverage.filtered.info --output-directory site/coverage
+
+      # --------------------------------------------------
+      # Doxygen
+      # --------------------------------------------------
+      - name: Generate Doxygen docs
+        run: |
+          doxygen docs/Doxyfile
+          # Para Doxyfile con OUTPUT_DIRECTORY por defecto:
+          cp -R docs/html/* site/doxygen/
+
+      # --------------------------------------------------
+      # Landing page (no heredoc/EOF)
+      # --------------------------------------------------
+      - name: Create index page
+        shell: bash
+        run: |
+          printf '%s\n' \
+          '<!doctype html>' \
+          '<html>' \
+          '<head><meta charset="utf-8"><title>cpp-course-template Reports</title></head>' \
+          '<body>' \
+          '  <h1>cpp-course-template – Reports</h1>' \
+          '  <ul>' \
+          '    <li><a href="unit_tests/">Unit Tests</a></li>' \
+          '    <li><a href="coverage/">Coverage</a></li>' \
+          '    <li><a href="doxygen/">Doxygen</a></li>' \
+          '  </ul>' \
+          '</body>' \
+          '</html>' \
+          > site/index.html
+
+      # --------------------------------------------------
+      # Debug Pages: confirm what will be published
+      # --------------------------------------------------
+      - name: Debug Pages context
+        run: |
+          echo "REF: $GITHUB_REF"
+          echo "EVENT: $GITHUB_EVENT_NAME"
+
+      - name: Debug Pages list site tree
+        run: |
+          echo "===== site/ files (maxdepth 3) ====="
+          find site -maxdepth 3 -type f | sort || true
+
+      - name: Debug Pages disk usage
+        run: |
+          echo "===== site/ sizes ====="
+          du -h site || true
+
+      - name: Debug Pages preview index.html
+        run: |
+          echo "===== site/index.html ====="
+          sed -n '1,200p' site/index.html || echo "index.html missing"
+
+      # --------------------------------------------------
+      # Publish to GitHub Pages (push to gh-pages branch)
+      # --------------------------------------------------
+      - name: Publish to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: docs_out
-
-  deploy-pages:
-    needs: ci-and-docs
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site
+          publish_branch: gh-pages
