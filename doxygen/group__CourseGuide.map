@@ -1,8 +1,8 @@
 <map id="CourseGuide" name="CourseGuide">
-<area shape="rect" id="Node000003" href="$group__CG__DirectoryStructure.html" title=" " alt="" coords="174,5,319,45"/>
-<area shape="rect" id="Node000005" href="$group__CG__GitHubWorkflow.html" title=" " alt="" coords="159,70,334,95"/>
-<area shape="rect" id="Node000006" href="$group__CG__Lesson0.html" title=" " alt="" coords="185,119,308,145"/>
-<area shape="rect" id="Node000004" href="$group__CG__LocalWorkflow.html" title=" " alt="" coords="165,169,328,194"/>
-<area shape="rect" id="Node000002" href="$group__CG__RepositorySetup.html" title=" " alt="" coords="159,218,335,243"/>
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,119,111,145"/>
+<area shape="rect" id="Node000003" href="$group__CG__DirectoryStructure.html" title=" " alt="" coords="159,5,304,31"/>
+<area shape="rect" id="Node000005" href="$group__CG__GitHubWorkflow.html" title=" " alt="" coords="166,55,297,80"/>
+<area shape="rect" id="Node000006" href="$group__CG__Lesson0.html" title=" " alt="" coords="192,104,271,129"/>
+<area shape="rect" id="Node000004" href="$group__CG__LocalWorkflow.html" title=" " alt="" coords="171,153,291,179"/>
+<area shape="rect" id="Node000002" href="$group__CG__RepositorySetup.html" title=" " alt="" coords="165,203,298,228"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,111,129"/>
 </map>

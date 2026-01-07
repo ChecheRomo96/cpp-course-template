@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['courseguide_0',['CourseGuide',['../group__CourseGuide.html',1,'']]]
+  ['directory_20structure_0',['Directory Structure',['../group__CG__DirectoryStructure.html',1,'']]]
 ];

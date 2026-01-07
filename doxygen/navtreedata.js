@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "cpp-course-template", "index.html", [
+    [ "C++ Course Template — Documentation Portal", "index.html", "index" ],
     [ "00_CourseGuide", "md_docs_2CourseGuide_200__CourseGuide.html", null ],
     [ "01_RepositorySetup", "md_docs_2CourseGuide_201__RepositorySetup.html", null ],
     [ "02_DirectoryStructure", "md_docs_2CourseGuide_202__DirectoryStructure.html", null ],

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setup_20br_0',['Repository Setup  &lt;br&gt;',['../group__CG__RepositorySetup.html',1,'']]],
-  ['structure_20br_1',['Directory Structure  &lt;br&gt;',['../group__CG__DirectoryStructure.html',1,'']]]
+  ['workflow_0',['workflow',['../group__CG__GitHubWorkflow.html',1,'GitHub Workflow'],['../group__CG__LocalWorkflow.html',1,'Local Workflow']]]
 ];

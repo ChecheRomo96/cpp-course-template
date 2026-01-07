@@ -19,6 +19,6 @@ var searchData=
   ['instructor_20tests_20validate_20student_20code_16',['9.3 How Instructor Tests Validate Student Code',['../group__CG__Lesson0.html#autotoc_md130',1,'']]],
   ['instructor_20workflow_17',['5.0 Instructor Workflow',['../group__CG__GitHubWorkflow.html#autotoc_md86',1,'']]],
   ['instructors_18',['instructors',['../group__CG__GitHubWorkflow.html#autotoc_md66',1,'2.0 Initial Setup — Students &lt;strong&gt;and&lt;/strong&gt; Instructors'],['../group__CG__GitHubWorkflow.html#autotoc_md70',1,'2.2 Enabling GitHub Pages (Students &amp; Instructors)']]],
-  ['introduction_19',['Introduction',['..//home/runner/work/cpp-course-template/cpp-course-template/docs/mainpage.dox#intro',1,'']]],
+  ['introduction_19',['Introduction',['../index.html#autotoc_md134',1,'']]],
   ['is_20organized_20this_20way_20',['2.0 Why the Repository Is Organized This Way',['../group__CG__Lesson0.html#autotoc_md92',1,'']]]
 ];

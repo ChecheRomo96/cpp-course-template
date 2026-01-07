@@ -3,8 +3,8 @@ var indexSectionsWithContent =
   0: "0123456789_abcdefghilmnoprstuvwy—…",
   1: "ls",
   2: "m",
-  3: "0bcdglrsw",
-  4: "0bcdgprstuw"
+  3: "0cdglrsw",
+  4: "0bcdgprstuw—"
 };
 
 var indexSectionNames =
