@@ -87,6 +87,12 @@ jobs:
 
       - name: Build
         run: cmake --build build --parallel
+             
+      - name: Run CTest (to generate LastTest.log & Test.xml)
+        run: |
+          set -euxo pipefail
+          cd build
+          ctest --output-on-failure || true
 
       # --------------------------------------------------
       # HARD ASSERT: coverage instrumentation exists
