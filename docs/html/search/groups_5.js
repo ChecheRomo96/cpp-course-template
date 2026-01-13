@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lesson_0',['Example Lesson',['../group__Example__Lesson.html',1,'']]],
-  ['lessons_1',['Course Lessons',['../group__CourseLessons.html',1,'']]]
+  ['overview_0',['Course Guide Overview',['../group__CourseGuide__Overview.html',1,'']]]
 ];

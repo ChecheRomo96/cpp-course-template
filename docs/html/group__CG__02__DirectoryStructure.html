@@ -101,9 +101,9 @@ Collaboration diagram for Directory Structure:</div>
 </map>
 </div>
 <p>This page describes the structure of the repository and the purpose of each top-level directory.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md33"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
 1.0 Top-Level Layout</h3>
-<div class="fragment"><div class="line">cpp-course-template/</div>
+<div class="fragment"><div class="line">cpp-course-<span class="keyword">template</span>/</div>
 <div class="line">├── course/        → Instructor reference code</div>
 <div class="line">├── student/       → Student implementation code</div>
 <div class="line">├── docs/          → Doxyfile + mainpage + CourseGuide</div>
@@ -111,17 +111,17 @@ Collaboration diagram for Directory Structure:</div>
 <div class="line">├── .github/       → CI/CD configuration</div>
 <div class="line">└── CMakeLists.txt → Root CMake configuration</div>
 </div><!-- fragment --><hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md34"></a>
 2.0 Instructor Code (<span class="tt">course/</span>)</h3>
 <div class="fragment"><div class="line">course/</div>
 <div class="line">├── include/       → Public instructor API headers</div>
 <div class="line">├── src/           → Internal instructor implementation (.cpp)</div>
 <div class="line">├── examples/      → Instructor example executables</div>
-<div class="line">├── tests/         → Instructor tests (auto-grading)</div>
-<div class="line">└── docs/          → Extra documentation for instructor modules</div>
+<div class="line">├── tests/         → Instructor tests (<span class="keyword">auto</span>-grading)</div>
+<div class="line">└── docs/          → Extra documentation <span class="keywordflow">for</span> instructor modules</div>
 </div><!-- fragment --><p>Students should <b>not</b> modify files under <span class="tt">course/</span>.</p>
 <hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md37"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md36"></a>
 3.0 Student Code (<span class="tt">student/</span>)</h3>
 <div class="fragment"><div class="line">student/</div>
 <div class="line">├── include/       → Public headers students expose</div>
@@ -131,7 +131,7 @@ Collaboration diagram for Directory Structure:</div>
 <div class="line">└── docs/          → Optional student documentation</div>
 </div><!-- fragment --><p>Only <span class="tt">student/</span> is writable by students.</p>
 <hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md39"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md38"></a>
 4.0 Documentation (<span class="tt">docs/</span>)</h3>
 <div class="fragment"><div class="line">docs/</div>
 <div class="line">├── Doxyfile       → Doxygen configuration</div>
@@ -139,7 +139,7 @@ Collaboration diagram for Directory Structure:</div>
 <div class="line">└── CourseGuide/   → Course Guide .dox pages</div>
 </div><!-- fragment --><p>The Course Guide is separated from the instructor/student code trees to keep the documentation clean and reusable.</p>
 <hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md41"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md40"></a>
 5.0 Libraries and Targets</h3>
 <p>CMake defines:</p>
 <ul>

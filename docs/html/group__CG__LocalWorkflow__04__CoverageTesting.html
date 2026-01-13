@@ -88,7 +88,7 @@ $(function(){initNavTree('group__CG__LocalWorkflow__04__CoverageTesting.html',''
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Coverage Testing <div class="ingroups"><a class="el" href="group__CourseGuide.html">Course Guide</a> &raquo; <a class="el" href="group__CG__03__LocalWorkflow.html">CG_03_LocalWorkflow</a></div></div></div>
+  <div class="headertitle"><div class="title">Coverage Testing <div class="ingroups"><a class="el" href="group__CourseGuide.html">Course Guide</a> &raquo; <a class="el" href="group__CG__03__LocalWorkflow.html">Local Workflow</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -96,14 +96,14 @@ Collaboration diagram for Coverage Testing:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__CG__LocalWorkflow__04__CoverageTesting.png" border="0" usemap="#agroup____CG____LocalWorkflow____04____CoverageTesting" loading="lazy" alt=""/></div>
 <map name="agroup____CG____LocalWorkflow____04____CoverageTesting" id="agroup____CG____LocalWorkflow____04____CoverageTesting">
-<area shape="rect" href="group__CG__03__LocalWorkflow.html" title=" " alt="" coords="5,5,171,31"/>
-<area shape="rect" title=" " alt="" coords="219,5,353,31"/>
+<area shape="rect" href="group__CG__03__LocalWorkflow.html" title=" " alt="" coords="5,5,125,31"/>
+<area shape="rect" title=" " alt="" coords="173,5,308,31"/>
 </map>
 </div>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md97"></a>
 Coverage Testing with CMake, GCOV, and LCOV</h1>
 <p>Part of the Local Workflow System</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md115"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md98"></a>
 Introduction</h2>
 <p>Code coverage answers a simple question:</p>
 <blockquote class="doxtable">
@@ -116,24 +116,24 @@ Introduction</h2>
 <li>Students who want to evaluate how well their tests exercise the code</li>
 </ul>
 <p>The build system uses a CMake option:</p>
-<div class="fragment"><div class="line">option(ENABLE_COVERAGE &quot;Enable coverage flags&quot; OFF)</div>
+<div class="fragment"><div class="line">option(ENABLE_COVERAGE <span class="stringliteral">&quot;Enable coverage flags&quot;</span> OFF)</div>
 </div><!-- fragment --><p>When <span class="tt">ENABLE_COVERAGE=ON</span>, extra compiler and linker flags are added so tools like <b>gcov</b> and <b>lcov</b> can generate coverage reports.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
 1. Coverage Flags in CMake</h2>
 <p>Relevant section from <span class="tt">CMakeLists.txt</span>:</p>
-<div class="fragment"><div class="line">if(ENABLE_COVERAGE)</div>
-<div class="line">    if(CMAKE_CXX_COMPILER_ID STREQUAL &quot;AppleClang&quot;)</div>
-<div class="line">        message(STATUS &quot;Building with coverage flags (AppleClang)&quot;)</div>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span>(ENABLE_COVERAGE)</div>
+<div class="line">    <span class="keywordflow">if</span>(CMAKE_CXX_COMPILER_ID STREQUAL <span class="stringliteral">&quot;AppleClang&quot;</span>)</div>
+<div class="line">        message(STATUS <span class="stringliteral">&quot;Building with coverage flags (AppleClang)&quot;</span>)</div>
 <div class="line">        add_compile_options(-fprofile-arcs -ftest-coverage -O0 -g)</div>
 <div class="line">        link_libraries(-fprofile-arcs -ftest-coverage)</div>
-<div class="line">    elseif(CMAKE_CXX_COMPILER_ID MATCHES &quot;GNU|Clang&quot;)</div>
-<div class="line">        message(STATUS &quot;Building with coverage flags (GNU/Clang)&quot;)</div>
+<div class="line">    elseif(CMAKE_CXX_COMPILER_ID MATCHES <span class="stringliteral">&quot;GNU|Clang&quot;</span>)</div>
+<div class="line">        message(STATUS <span class="stringliteral">&quot;Building with coverage flags (GNU/Clang)&quot;</span>)</div>
 <div class="line">        add_compile_options(--coverage -O0 -g)</div>
 <div class="line">        link_libraries(--coverage)</div>
 <div class="line">    endif()</div>
 <div class="line">endif()</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md118"></a>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md101"></a>
 What this does:</h3>
 <ul>
 <li>Checks if <span class="tt">ENABLE_COVERAGE</span> is <span class="tt">ON</span></li>
@@ -148,7 +148,7 @@ What this does:</h3>
 <p>Important: Coverage builds should generally be <b>Debug</b> builds with <b>no optimizations</b>, otherwise some lines may be optimized away and appear as "not executed". </p>
 </blockquote>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md120"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md103"></a>
 2. Configuring a Coverage Build</h2>
 <p>From the repository root:</p>
 <div class="fragment"><div class="line">cmake -S . -B build \</div>
@@ -164,13 +164,13 @@ What this does:</h3>
 <p>To rebuild:</p>
 <div class="fragment"><div class="line">cmake --build build --parallel</div>
 </div><!-- fragment --><hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md122"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md105"></a>
 3. Running Tests to Collect Coverage Data</h2>
 <p>Coverage data is only generated when binaries are executed.\ To run all tests:</p>
 <div class="fragment"><div class="line">ctest --test-dir build --output-on-failure</div>
 </div><!-- fragment --><p>After this step, the compiler/linker will have produced coverage data files (e.g., <span class="tt">.gcda</span>, <span class="tt">.gcno</span>) under the <span class="tt">build/</span> directory.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md124"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
 4. Generating Coverage Reports (GCOV + LCOV)</h2>
 <p>A typical workflow on Linux/macOS is:</p>
 <ol type="1">
@@ -182,47 +182,47 @@ What this does:</h3>
 <li>Use <span class="tt">genhtml</span> to generate an HTML report</li>
 </ol>
 <p>An example shell script (<span class="tt">scripts/code_coverage.sh</span>) might look like:</p>
-<div class="fragment"><div class="line">#!/usr/bin/env bash</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#!/usr/bin/env bash</span></div>
 <div class="line">set -e</div>
 <div class="line"> </div>
-<div class="line">BUILD_DIR=&quot;build&quot;</div>
-<div class="line">COVERAGE_DIR=&quot;site/coverage&quot;</div>
+<div class="line">BUILD_DIR=<span class="stringliteral">&quot;build&quot;</span></div>
+<div class="line">COVERAGE_DIR=<span class="stringliteral">&quot;site/coverage&quot;</span></div>
 <div class="line"> </div>
-<div class="line">echo &quot;▶ Cleaning previous build and coverage...&quot;</div>
-<div class="line">rm -rf &quot;${BUILD_DIR}&quot; &quot;${COVERAGE_DIR}&quot;</div>
+<div class="line">echo <span class="stringliteral">&quot;▶ Cleaning previous build and coverage...&quot;</span></div>
+<div class="line">rm -rf <span class="stringliteral">&quot;${BUILD_DIR}&quot;</span> <span class="stringliteral">&quot;${COVERAGE_DIR}&quot;</span></div>
 <div class="line"> </div>
-<div class="line">echo &quot;▶ Configuring CMake (coverage + tests)...&quot;</div>
-<div class="line">cmake -S . -B &quot;${BUILD_DIR}&quot; \</div>
+<div class="line">echo <span class="stringliteral">&quot;▶ Configuring CMake (coverage + tests)...&quot;</span></div>
+<div class="line">cmake -S . -B <span class="stringliteral">&quot;${BUILD_DIR}&quot;</span> \</div>
 <div class="line">  -DENABLE_TESTING=ON \</div>
 <div class="line">  -DENABLE_COVERAGE=ON \</div>
 <div class="line">  -DCMAKE_BUILD_TYPE=Debug</div>
 <div class="line"> </div>
-<div class="line">echo &quot;▶ Building project...&quot;</div>
-<div class="line">cmake --build &quot;${BUILD_DIR}&quot; --parallel</div>
+<div class="line">echo <span class="stringliteral">&quot;▶ Building project...&quot;</span></div>
+<div class="line">cmake --build <span class="stringliteral">&quot;${BUILD_DIR}&quot;</span> --parallel</div>
 <div class="line"> </div>
-<div class="line">echo &quot;▶ Running tests...&quot;</div>
-<div class="line">ctest --test-dir &quot;${BUILD_DIR}&quot; --output-on-failure</div>
+<div class="line">echo <span class="stringliteral">&quot;▶ Running tests...&quot;</span></div>
+<div class="line">ctest --test-dir <span class="stringliteral">&quot;${BUILD_DIR}&quot;</span> --output-on-failure</div>
 <div class="line"> </div>
-<div class="line">echo &quot;▶ Capturing coverage with lcov...&quot;</div>
-<div class="line">mkdir -p &quot;${COVERAGE_DIR}&quot;</div>
-<div class="line">lcov --directory &quot;${BUILD_DIR}&quot; --capture --output-file &quot;${COVERAGE_DIR}/coverage.info&quot;</div>
+<div class="line">echo <span class="stringliteral">&quot;▶ Capturing coverage with lcov...&quot;</span></div>
+<div class="line">mkdir -p <span class="stringliteral">&quot;${COVERAGE_DIR}&quot;</span></div>
+<div class="line">lcov --directory <span class="stringliteral">&quot;${BUILD_DIR}&quot;</span> --capture --output-file <span class="stringliteral">&quot;${COVERAGE_DIR}/coverage.info&quot;</span></div>
 <div class="line"> </div>
-<div class="line">echo &quot;▶ Filtering out system and external files...&quot;</div>
-<div class="line">lcov --remove &quot;${COVERAGE_DIR}/coverage.info&quot; \</div>
-<div class="line">     &quot;/usr/*&quot; \</div>
-<div class="line">     &quot;*/_deps/*&quot; \</div>
-<div class="line">     --output-file &quot;${COVERAGE_DIR}/coverage_filtered.info&quot;</div>
+<div class="line">echo <span class="stringliteral">&quot;▶ Filtering out system and external files...&quot;</span></div>
+<div class="line">lcov --remove <span class="stringliteral">&quot;${COVERAGE_DIR}/coverage.info&quot;</span> \</div>
+<div class="line">     <span class="stringliteral">&quot;/usr/*&quot;</span> \</div>
+<div class="line">     <span class="stringliteral">&quot;*/_deps/*&quot;</span> \</div>
+<div class="line">     --output-file <span class="stringliteral">&quot;${COVERAGE_DIR}/coverage_filtered.info&quot;</span></div>
 <div class="line"> </div>
-<div class="line">echo &quot;▶ Generating HTML report with genhtml...&quot;</div>
-<div class="line">genhtml &quot;${COVERAGE_DIR}/coverage_filtered.info&quot; \</div>
-<div class="line">        --output-directory &quot;${COVERAGE_DIR}&quot;</div>
+<div class="line">echo <span class="stringliteral">&quot;▶ Generating HTML report with genhtml...&quot;</span></div>
+<div class="line">genhtml <span class="stringliteral">&quot;${COVERAGE_DIR}/coverage_filtered.info&quot;</span> \</div>
+<div class="line">        --output-directory <span class="stringliteral">&quot;${COVERAGE_DIR}&quot;</span></div>
 <div class="line"> </div>
-<div class="line">echo &quot;✔ Coverage report generated at ${COVERAGE_DIR}/index.html&quot;</div>
+<div class="line">echo <span class="stringliteral">&quot;✔ Coverage report generated at ${COVERAGE_DIR}/index.html&quot;</span></div>
 </div><!-- fragment --><blockquote class="doxtable">
 <p>Note: The exact script name and paths may vary in your repository,\ but the idea remains: <b>configure with coverage → build → run tests → lcov + genhtml.</b> </p>
 </blockquote>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md126"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
 5. Typical Output Layout</h2>
 <p>Assuming the script writes to <span class="tt">site/coverage</span>, you get:</p>
 <ul>
@@ -236,7 +236,7 @@ What this does:</h3>
 </ul>
 <p>See the <b>Doxygen</b> and <b>Unit Testing</b> documentation pages for how to wire everything together in a unified <span class="tt">site/index.html</span>.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md128"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
 6. Usage Summary</h2>
 <ol type="1">
 <li><p class="startli">Configure for coverage:</p>
@@ -268,9 +268,8 @@ What this does:</h3>
     </span></p>
 </li>
 </ol>
-<p>With this workflow, both instructors and students can evaluate how thoroughly their tests exercise the code base and iteratively improve test suites.</p>
-<hr  />
- </div><!-- contents -->
+<p>With this workflow, both instructors and students can evaluate how thoroughly their tests exercise the code base and iteratively improve test suites. </p>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
