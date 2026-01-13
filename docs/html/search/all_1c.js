@@ -10,7 +10,7 @@ var searchData=
   ['url_20template_7',['4.1 GitHub Pages URL Template',['../group__CG__01__RepositorySetup.html#autotoc_md17',1,'']]],
   ['urls_8',['2.3 GitHub Pages URLs',['../group__CG__04__GitHubWorkflow.html#autotoc_md157',1,'']]],
   ['usage_20summary_9',['6. Usage Summary',['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md130',1,'']]],
-  ['use_20this_20guide_10',['How to Use this Guide',['../CourseGuide.html#autotoc_md1',1,'']]],
+  ['use_20this_20guide_10',['How to Use this Guide',['../group__CourseGuide.html#autotoc_md1',1,'']]],
   ['users_11',['Notes for Windows Users',['../group__CG__LocalWorkflow__01__Building.html#autotoc_md58',1,'']]],
   ['using_20fetchcontent_12',['3. Reproducible GoogleTest Download Using FetchContent',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md86',1,'']]],
   ['using_20gh_20pages_20branch_13',['4.0 Enabling GitHub Pages (Using &lt;span class=&quot;tt&quot;&gt;gh-pages&lt;/span&gt; Branch)',['../group__CG__01__RepositorySetup.html#autotoc_md12',1,'']]],

@@ -22,6 +22,6 @@ var searchData=
   ['googletest_20skeleton_19',['Basic GoogleTest Skeleton',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md112',1,'']]],
   ['groups_20',['Main Page and Documentation Groups',['../group__CG__LocalWorkflow__05__Doxygen.html#autotoc_md140',1,'']]],
   ['gtest_5fmain_21',['gtest_main',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md110',1,'']]],
-  ['guide_22',['Guide',['../CourseGuide.html',1,'Course Guide'],['../CourseGuide.html#autotoc_md1',1,'How to Use this Guide']]],
-  ['guide_20overview_23',['Course Guide Overview',['../CourseGuide.html#autotoc_md0',1,'']]]
+  ['guide_22',['How to Use this Guide',['../group__CourseGuide.html#autotoc_md1',1,'']]],
+  ['guide_20overview_23',['Course Guide Overview',['../group__CourseGuide.html#autotoc_md0',1,'']]]
 ];

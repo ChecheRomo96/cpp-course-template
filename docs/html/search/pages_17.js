@@ -9,5 +9,5 @@ var searchData=
   ['option_20b_3a_20from_20the_20repository_20root_6',['Option B: From the repository root',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md69',1,'']]],
   ['optional_7',['11.0 Instructor Notes (Optional)',['../group__CG__01__RepositorySetup.html#autotoc_md33',1,'']]],
   ['output_20layout_8',['5. Typical Output Layout',['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md128',1,'']]],
-  ['overview_9',['Overview',['../CourseGuide.html#autotoc_md0',1,'Course Guide Overview'],['../group__CG__LocalWorkflow__01__Building.html#autotoc_md46',1,'Project Structure Overview']]]
+  ['overview_9',['Overview',['../group__CourseGuide.html#autotoc_md0',1,'Course Guide Overview'],['../group__CG__LocalWorkflow__01__Building.html#autotoc_md46',1,'Project Structure Overview']]]
 ];
