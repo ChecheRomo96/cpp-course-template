@@ -89,19 +89,10 @@ $(document).ready(function(){initNavTree('group__CG__LocalWorkflow__03__UnitTest
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Unit Testing<div class="ingroups"><a class="el" href="group__CourseGuide.html">CourseGuide</a> &raquo; <a class="el" href="group__CG__03__LocalWorkflow.html">Local Workflow</a></div></div></div>
+  <div class="headertitle"><div class="title">Unit Testing</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Collaboration diagram for Unit Testing:</div>
-<div class="dyncontent">
-<div class="center"><img src="group__CG__LocalWorkflow__03__UnitTesting.png" border="0" usemap="#agroup____CG____LocalWorkflow____03____UnitTesting" alt=""/></div>
-<map name="agroup____CG____LocalWorkflow____03____UnitTesting" id="agroup____CG____LocalWorkflow____03____UnitTesting">
-<area shape="rect" href="group__CG__03__LocalWorkflow.html" title=" " alt="" coords="5,5,125,31"/>
-<area shape="rect" title=" " alt="" coords="173,5,272,31"/>
-</map>
-</div>
-<h1><a class="anchor" id="autotoc_md85"></a>
+<h1><a class="anchor" id="autotoc_md79"></a>
 Unit Testing System with CMake + CTest + GoogleTest</h1>
 <p>Comprehensive and Fully Explained Guide</p>
 <p>This document explains <b>how CMake, GoogleTest, and CTest work together</b> to create a robust, reproducible, and maintainable unit testing infrastructure in the course project. The integration uses:</p>
@@ -113,7 +104,7 @@ Unit Testing System with CMake + CTest + GoogleTest</h1>
 </ul>
 <p>This guide provides students with a transparent understanding of the testing workflow used in modern C++ projects.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md87"></a>
+<h2><a class="anchor" id="autotoc_md81"></a>
 1. Enabling the Test Block in CMake</h2>
 <div class="fragment"><div class="line">if(ENABLE_TESTING)</div>
 <div class="line">endif()</div>
@@ -127,11 +118,11 @@ Unit Testing System with CMake + CTest + GoogleTest</h1>
 </ul>
 <p>This allows the project to be built <b>without</b> the testing system when desired.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md89"></a>
+<h2><a class="anchor" id="autotoc_md83"></a>
 2. Activating CTest</h2>
 <div class="fragment"><div class="line">include(CTest)</div>
 <div class="line">enable_testing()</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md90"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md84"></a>
 What this does:</h3>
 <ul>
 <li><code>include(CTest)</code>\ Imports CTest-related commands (like <code>add_test()</code>).</li>
@@ -139,7 +130,7 @@ What this does:</h3>
 </ul>
 <p>Without these lines, <b>CTest will not detect any tests</b>, even if executables exist.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md92"></a>
+<h2><a class="anchor" id="autotoc_md86"></a>
 3. Reproducible GoogleTest Download Using FetchContent</h2>
 <div class="fragment"><div class="line">include(FetchContent)</div>
 <div class="line"> </div>
@@ -147,7 +138,7 @@ What this does:</h3>
 <div class="line">    googletest</div>
 <div class="line">    URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.zip</div>
 <div class="line">)</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md93"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md87"></a>
 Why FetchContent?</h3>
 <ul>
 <li>Ensures every user downloads <b>the exact same version</b>\</li>
@@ -155,7 +146,7 @@ Why FetchContent?</h3>
 <li>Ideal for CI/CD reproducibility and classroom consistency</li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md95"></a>
+<h2><a class="anchor" id="autotoc_md89"></a>
 4. Disabling GoogleTest's Internal Tests</h2>
 <div class="fragment"><div class="line">set(gtest_force_shared_crt ON CACHE BOOL &quot;&quot; FORCE)</div>
 </div><!-- fragment --><p>This configuration:</p>
@@ -165,7 +156,7 @@ Why FetchContent?</h3>
 <li>Avoids Windows runtime conflicts (MSVC CRT mismatch)</li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md97"></a>
+<h2><a class="anchor" id="autotoc_md91"></a>
 5. Making GoogleTest Available</h2>
 <div class="fragment"><div class="line">FetchContent_MakeAvailable(googletest)</div>
 <div class="line">include(GoogleTest)</div>
@@ -180,9 +171,9 @@ Why FetchContent?</h3>
 <li>Loads macros like <code>gtest_discover_tests()</code></li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md99"></a>
+<h2><a class="anchor" id="autotoc_md93"></a>
 6. Automatic Test Discovery for Instructor Tests (&lt;tt&gt;course/tests/&lt;/tt&gt;)</h2>
-<h3><a class="anchor" id="autotoc_md100"></a>
+<h3><a class="anchor" id="autotoc_md94"></a>
 a) Discovering &lt;tt&gt;.cc&lt;/tt&gt; test files</h3>
 <div class="fragment"><div class="line">file(GLOB COURSE_TESTS CONFIGURE_DEPENDS</div>
 <div class="line">    &quot;${CMAKE_CURRENT_LIST_DIR}/course/tests/*.cc&quot;</div>
@@ -193,17 +184,17 @@ a) Discovering &lt;tt&gt;.cc&lt;/tt&gt; test files</h3>
 </ul>
 <p>Example detected file: </p><pre class="fragment">course/tests/LectureExample_unitTests.cc
 </pre> <hr  />
-<h3><a class="anchor" id="autotoc_md101"></a>
+<h3><a class="anchor" id="autotoc_md95"></a>
 b) Generating a test executable name</h3>
 <div class="fragment"><div class="line">get_filename_component(test_name &quot;${test_file}&quot; NAME_WE)</div>
 </div><!-- fragment --><p>Example: </p><pre class="fragment">LectureExample_unitTests.cc → LectureExample_unitTests
 </pre> <hr  />
-<h3><a class="anchor" id="autotoc_md102"></a>
+<h3><a class="anchor" id="autotoc_md96"></a>
 c) Creating the executable</h3>
 <div class="fragment"><div class="line">add_executable(${test_name} &quot;${test_file}&quot;)</div>
 </div><!-- fragment --><p>Each test file → one executable.</p>
 <hr  />
-<h3><a class="anchor" id="autotoc_md104"></a>
+<h3><a class="anchor" id="autotoc_md98"></a>
 d) Linking required libraries</h3>
 <div class="fragment"><div class="line">target_link_libraries(${test_name}</div>
 <div class="line">    PRIVATE</div>
@@ -216,12 +207,12 @@ d) Linking required libraries</h3>
 <li>GoogleTest provides the test runner</li>
 </ul>
 <hr  />
-<h3><a class="anchor" id="autotoc_md106"></a>
+<h3><a class="anchor" id="autotoc_md100"></a>
 e) Registering the test in CTest</h3>
 <div class="fragment"><div class="line">add_test(NAME ${test_name} COMMAND ${test_name})</div>
 </div><!-- fragment --><p>CTest now recognizes the test.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md108"></a>
+<h2><a class="anchor" id="autotoc_md102"></a>
 7. Automatic Test Discovery for Student Tests (&lt;tt&gt;student/tests/&lt;/tt&gt;)</h2>
 <p>Test discovery mechanism is identical:</p>
 <div class="fragment"><div class="line">file(GLOB STUDENT_TESTS CONFIGURE_DEPENDS</div>
@@ -235,30 +226,30 @@ e) Registering the test in CTest</h3>
 </ul>
 <p><code>StudentLib</code> <b>already depends on CourseLib</b>, so students get full API access.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md110"></a>
+<h2><a class="anchor" id="autotoc_md104"></a>
 8. Running All Tests</h2>
 <p>Any file in: </p><pre class="fragment">course/tests/*.cc
 student/tests/*.cc
 </pre><p> → becomes a registered CTest test.</p>
-<h3><a class="anchor" id="autotoc_md111"></a>
+<h3><a class="anchor" id="autotoc_md105"></a>
 Build with tests enabled:</h3>
 <div class="fragment"><div class="line">cmake -S . -B build -DENABLE_TESTING=ON</div>
 <div class="line">cmake --build build</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md112"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md106"></a>
 Run tests:</h3>
 <div class="fragment"><div class="line">ctest --output-on-failure --test-dir build</div>
 </div><!-- fragment --><hr  />
-<h2><a class="anchor" id="autotoc_md114"></a>
+<h2><a class="anchor" id="autotoc_md108"></a>
 Summary Table</h2>
 <hr  />
 <p> Directory Contains Links Against Auto-Registered </p><hr  />
 <p> <code>course/tests/</code> Instructor tests CourseLib Yes</p>
 <p><code>student/tests/</code> Student tests StudentLib Yes</p>
 <p>Both GoogleTest runner gtest / Yes </p>
-<h2><a class="anchor" id="autotoc_md116"></a>
+<h2><a class="anchor" id="autotoc_md110"></a>
 gtest_main</h2>
 <hr  />
-<h2><a class="anchor" id="autotoc_md118"></a>
+<h2><a class="anchor" id="autotoc_md112"></a>
 Basic GoogleTest Skeleton</h2>
 <div class="fragment"><div class="line"> cpp</div>
 <div class="line">#include &lt;gtest/gtest.h&gt;</div>
@@ -281,7 +272,7 @@ Basic GoogleTest Skeleton</h2>
 <div class="line">  EXPECT_NO_THROW(MyPrivateAPI());</div>
 <div class="line">}</div>
 </div><!-- fragment --><hr  />
-<h2><a class="anchor" id="autotoc_md120"></a>
+<h2><a class="anchor" id="autotoc_md114"></a>
 Extending Tests as a Student</h2>
 <div class="fragment"><div class="line"> cpp</div>
 <div class="line">TEST(MyStudentExampleTest, HandlesEdgeCase) {</div>

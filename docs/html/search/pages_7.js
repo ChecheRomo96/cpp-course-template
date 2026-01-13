@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['—_20documentation_20portal_0',['C++ Course Template — Documentation Portal',['../index.html',1,'']]]
+  ['template_20—_20documentation_20portal_0',['C++ Course Template — Documentation Portal',['../index.html',1,'']]]
 ];

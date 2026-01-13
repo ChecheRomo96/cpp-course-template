@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cpp-course-template: Repository Setup</title>
+<title>cpp-course-template: CG_01_RepositorySetup</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,23 +89,14 @@ $(document).ready(function(){initNavTree('group__CG__01__RepositorySetup.html','
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Repository Setup<div class="ingroups"><a class="el" href="group__CourseGuide.html">CourseGuide</a></div></div></div>
+  <div class="headertitle"><div class="title">CG_01_RepositorySetup</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Collaboration diagram for Repository Setup:</div>
-<div class="dyncontent">
-<div class="center"><img src="group__CG__01__RepositorySetup.png" border="0" usemap="#agroup____CG____01____RepositorySetup" alt=""/></div>
-<map name="agroup____CG____01____RepositorySetup" id="agroup____CG____01____RepositorySetup">
-<area shape="rect" title=" " alt="" coords="159,5,292,31"/>
-<area shape="rect" href="group__CourseGuide.html" title=" " alt="" coords="5,5,111,31"/>
-</map>
-</div>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md2"></a>
 Repository Setup: Forking, Cloning, Actions, and Pages</h1>
 <p>This page explains how to fork, clone, and prepare the repository for local development, including how to activate GitHub Actions, enable GitHub Pages correctly for your CI configuration, and fetch updates from the instructor.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 1.0 Creating Your Fork (Required for Students)</h1>
 <p>Students must <b>fork the instructor repository</b> so they can:</p>
 <ul>
@@ -118,20 +109,20 @@ Repository Setup: Forking, Cloning, Actions, and Pages</h1>
 <li>receive instructor updates during the semester <br  />
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Step 1 — Open the instructor repository</h2>
 <p>Visit:</p>
 <div class="fragment"><div class="line">https://github.com/&lt;instructor&gt;/&lt;course_name&gt;</div>
 </div><!-- fragment --><p>Click <b>Fork</b> and select your GitHub account.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 2.0 Cloning Your Fork</h1>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Step 2 — Clone your fork locally</h2>
 <div class="fragment"><div class="line">git clone https://github.com/&lt;your-username&gt;/&lt;course_name&gt;.git</div>
 <div class="line">cd &lt;course_name&gt;</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 3.0 Activating GitHub Actions (Important)</h1>
 <p>GitHub Actions does <b>not</b> run until your fork receives <b>at least one push</b>.</p>
 <p>Activate CI by pushing an empty commit:</p>
@@ -139,15 +130,15 @@ Step 2 — Clone your fork locally</h2>
 <div class="line">git push -u origin main</div>
 </div><!-- fragment --><p>After this push, the <b>Actions</b> tab will show the workflows.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 4.0 Enabling GitHub Pages (Using &lt;tt&gt;gh-pages&lt;/tt&gt; Branch)</h1>
 <p>Your repository uses <code>peaceiris/actions-gh-pages</code> to deploy documentation. <br  />
  This means documentation is <b>built into <code>site/</code> and published to the <code>gh-pages</code> branch</b>.</p>
 <p>Therefore, GitHub Pages must be configured to serve content from that branch.</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Step 1 — Go to:</h2>
 <p><b>Settings → Pages</b></p>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Step 2 — Under &lt;em&gt;Build and Deployment&lt;/em&gt;, set:</h2>
 <ul>
 <li><b>Source:</b> Deploy from a branch <br  />
@@ -157,7 +148,7 @@ Step 2 — Under &lt;em&gt;Build and Deployment&lt;/em&gt;, set:</h2>
 <li><b>Folder:</b> <code>/ (root)</code></li>
 </ul>
 <p>Click <b>Save</b>.</p>
-<h3><a class="anchor" id="autotoc_md21"></a>
+<h3><a class="anchor" id="autotoc_md15"></a>
 Why this is required:</h3>
 <p>Your CI contains:</p>
 <div class="fragment"><div class="line">- name: Publish to GitHub Pages</div>
@@ -175,7 +166,7 @@ Why this is required:</h3>
 </ol>
 <p>If you select “GitHub Actions” as the source, <b>Pages will NOT find your site</b>.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 4.1 GitHub Pages URL Template</h2>
 <p>Once GitHub Pages is enabled and at least one deployment has run, <br  />
  your documentation site will be available at:</p>
@@ -187,12 +178,12 @@ Why this is required:</h3>
 <div class="fragment"><div class="line">https://&lt;instructor-username&gt;.github.io/&lt;course_name&gt;/</div>
 </div><!-- fragment --><p>You can share this URL as part of your portfolio or course deliverables.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md25"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 5.0 Adding the Instructor Repository as Upstream</h1>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Step 3 — Add upstream remote</h2>
 <div class="fragment"><div class="line">git remote add upstream https://github.com/&lt;instructor&gt;/&lt;course_name&gt;.git</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md27"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md21"></a>
 Step 4 — Verify remotes</h2>
 <div class="fragment"><div class="line">git remote -v</div>
 </div><!-- fragment --><p>Expected output:</p>
@@ -201,7 +192,7 @@ Step 4 — Verify remotes</h2>
 <div class="line">upstream  https://github.com/&lt;instructor&gt;/&lt;course_name&gt;.git (fetch)</div>
 <div class="line">upstream  https://github.com/&lt;instructor&gt;/&lt;course_name&gt;.git (push)</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md29"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 6.0 Keeping Your Fork Updated</h1>
 <p>Run this regularly:</p>
 <div class="fragment"><div class="line">git fetch upstream</div>
@@ -210,7 +201,7 @@ Step 4 — Verify remotes</h2>
 <div class="line">git push origin main</div>
 </div><!-- fragment --><p>This brings in instructor updates.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1><a class="anchor" id="autotoc_md25"></a>
 7.0 Required Toolchain</h1>
 <p>You need:</p>
 <ul>
@@ -229,17 +220,17 @@ Step 4 — Verify remotes</h2>
 </li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md33"></a>
+<h1><a class="anchor" id="autotoc_md27"></a>
 8.0 Verify Installation</h1>
 <div class="fragment"><div class="line">cmake --version</div>
 <div class="line">g++ --version</div>
 <div class="line">git --version</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md29"></a>
 9.0 First Local Configuration</h1>
 <div class="fragment"><div class="line">cmake -B build -DCMAKE_BUILD_TYPE=Debug</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h1><a class="anchor" id="autotoc_md31"></a>
 10.0 First Build</h1>
 <div class="fragment"><div class="line">cmake --build build --parallel</div>
 </div><!-- fragment --><p>This compiles:</p>
@@ -258,7 +249,7 @@ Step 4 — Verify remotes</h2>
 </li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md39"></a>
+<h1><a class="anchor" id="autotoc_md33"></a>
 11.0 Instructor Notes (Optional)</h1>
 <p>Instructors may:</p>
 <ul>

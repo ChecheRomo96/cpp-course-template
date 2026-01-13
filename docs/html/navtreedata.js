@@ -27,6 +27,11 @@ var NAVTREE =
   [ "cpp-course-template", "index.html", [
     [ "C++ Course Template — Documentation Portal", "index.html", "index" ],
     [ "00_CourseGuide", "md_docs_2CourseGuide_200__CourseGuide.html", null ],
+    [ "Course Guide", "CourseGuide.html", [
+      [ "Course Guide Overview", "CourseGuide.html#autotoc_md0", [
+        [ "How to Use this Guide", "CourseGuide.html#autotoc_md1", null ]
+      ] ]
+    ] ],
     [ "01_RepositorySetup", "md_docs_2CourseGuide_201__RepositorySetup.html", null ],
     [ "02_DirectoryStructure", "md_docs_2CourseGuide_202__DirectoryStructure.html", null ],
     [ "01_Building", "md_docs_2CourseGuide_203__LocalWorkflow_201__Building.html", null ],
@@ -50,7 +55,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"group__CG__01__RepositorySetup.html"
+"CourseGuide.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

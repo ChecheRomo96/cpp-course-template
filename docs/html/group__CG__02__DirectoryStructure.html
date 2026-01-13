@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cpp-course-template: Directory Structure</title>
+<title>cpp-course-template: CG_02_DirectoryStructure</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,20 +89,11 @@ $(document).ready(function(){initNavTree('group__CG__02__DirectoryStructure.html
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Directory Structure<div class="ingroups"><a class="el" href="group__CourseGuide.html">CourseGuide</a></div></div></div>
+  <div class="headertitle"><div class="title">CG_02_DirectoryStructure</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Collaboration diagram for Directory Structure:</div>
-<div class="dyncontent">
-<div class="center"><img src="group__CG__02__DirectoryStructure.png" border="0" usemap="#agroup____CG____02____DirectoryStructure" alt=""/></div>
-<map name="agroup____CG____02____DirectoryStructure" id="agroup____CG____02____DirectoryStructure">
-<area shape="rect" title=" " alt="" coords="159,5,304,31"/>
-<area shape="rect" href="group__CourseGuide.html" title=" " alt="" coords="5,5,111,31"/>
-</map>
-</div>
 <p>This page describes the structure of the repository and the purpose of each top-level directory.</p>
-<h3><a class="anchor" id="autotoc_md41"></a>
+<h3><a class="anchor" id="autotoc_md35"></a>
 1.0 Top-Level Layout</h3>
 <div class="fragment"><div class="line">cpp-course-template/</div>
 <div class="line">├── course/        → Instructor reference code</div>
@@ -112,7 +103,7 @@ Collaboration diagram for Directory Structure:</div>
 <div class="line">├── .github/       → CI/CD configuration</div>
 <div class="line">└── CMakeLists.txt → Root CMake configuration</div>
 </div><!-- fragment --><hr  />
-<h3><a class="anchor" id="autotoc_md43"></a>
+<h3><a class="anchor" id="autotoc_md37"></a>
 2.0 Instructor Code (&lt;tt&gt;course/&lt;/tt&gt;)</h3>
 <div class="fragment"><div class="line">course/</div>
 <div class="line">├── include/       → Public instructor API headers</div>
@@ -122,7 +113,7 @@ Collaboration diagram for Directory Structure:</div>
 <div class="line">└── docs/          → Extra documentation for instructor modules</div>
 </div><!-- fragment --><p>Students should <b>not</b> modify files under <code>course/</code>.</p>
 <hr  />
-<h3><a class="anchor" id="autotoc_md45"></a>
+<h3><a class="anchor" id="autotoc_md39"></a>
 3.0 Student Code (&lt;tt&gt;student/&lt;/tt&gt;)</h3>
 <div class="fragment"><div class="line">student/</div>
 <div class="line">├── include/       → Public headers students expose</div>
@@ -132,7 +123,7 @@ Collaboration diagram for Directory Structure:</div>
 <div class="line">└── docs/          → Optional student documentation</div>
 </div><!-- fragment --><p>Only <code>student/</code> is writable by students.</p>
 <hr  />
-<h3><a class="anchor" id="autotoc_md47"></a>
+<h3><a class="anchor" id="autotoc_md41"></a>
 4.0 Documentation (&lt;tt&gt;docs/&lt;/tt&gt;)</h3>
 <div class="fragment"><div class="line">docs/</div>
 <div class="line">├── Doxyfile       → Doxygen configuration</div>
@@ -140,7 +131,7 @@ Collaboration diagram for Directory Structure:</div>
 <div class="line">└── CourseGuide/   → Course Guide .dox pages</div>
 </div><!-- fragment --><p>The Course Guide is separated from the instructor/student code trees to keep the documentation clean and reusable.</p>
 <hr  />
-<h3><a class="anchor" id="autotoc_md49"></a>
+<h3><a class="anchor" id="autotoc_md43"></a>
 5.0 Libraries and Targets</h3>
 <p>CMake defines:</p>
 <ul>

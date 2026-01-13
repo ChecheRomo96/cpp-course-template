@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['header_20—_20tt_20course_20include_20lectureexample_5fpublicapi_20hpp_20tt_0',['Public header — &lt;tt&gt;course/include/LectureExample_publicAPI.hpp&lt;/tt&gt;',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md206',1,'']]],
-  ['header_20—_20tt_20student_20include_20studentexample_5fpublicapi_20hpp_20tt_1',['Public header — &lt;tt&gt;student/include/StudentExample_publicAPI.hpp&lt;/tt&gt;',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md211',1,'']]],
-  ['header_20files_2',['3.1 &lt;tt&gt;.hpp&lt;/tt&gt; (Header Files)',['../group__ExampleLesson__03__FileExtensions.html#autotoc_md186',1,'']]],
-  ['how_20cmake_20builds_20everything_3',['6.0 How CMake Builds Everything',['../group__ExampleLesson__06__CMakeIntegration.html#autotoc_md196',1,'']]],
-  ['how_20instructor_20tests_20validate_20student_20code_4',['9.3 How Instructor Tests Validate Student Code',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md215',1,'']]],
-  ['hpp_20tt_5',['hpp tt',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md206',1,'Public header — &lt;tt&gt;course/include/LectureExample_publicAPI.hpp&lt;/tt&gt;'],['../group__ExampleLesson__09__Boilerplate.html#autotoc_md211',1,'Public header — &lt;tt&gt;student/include/StudentExample_publicAPI.hpp&lt;/tt&gt;']]],
-  ['hpp_20tt_20header_20files_6',['3.1 &lt;tt&gt;.hpp&lt;/tt&gt; (Header Files)',['../group__ExampleLesson__03__FileExtensions.html#autotoc_md186',1,'']]],
-  ['hpp_20tt_20you_20document_3a_7',['In &lt;tt&gt;include/…_publicAPI.hpp&lt;/tt&gt; you document:',['../group__ExampleLesson__07__DocsPhilosophy.html#autotoc_md201',1,'']]]
+  ['header_20—_20tt_20course_20include_20lectureexample_5fpublicapi_20hpp_20tt_0',['Public header — &lt;tt&gt;course/include/LectureExample_publicAPI.hpp&lt;/tt&gt;',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md200',1,'']]],
+  ['header_20—_20tt_20student_20include_20studentexample_5fpublicapi_20hpp_20tt_1',['Public header — &lt;tt&gt;student/include/StudentExample_publicAPI.hpp&lt;/tt&gt;',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md205',1,'']]],
+  ['header_20files_2',['3.1 &lt;tt&gt;.hpp&lt;/tt&gt; (Header Files)',['../group__ExampleLesson__03__FileExtensions.html#autotoc_md180',1,'']]],
+  ['how_20cmake_20builds_20everything_3',['6.0 How CMake Builds Everything',['../group__ExampleLesson__06__CMakeIntegration.html#autotoc_md190',1,'']]],
+  ['how_20instructor_20tests_20validate_20student_20code_4',['9.3 How Instructor Tests Validate Student Code',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md209',1,'']]],
+  ['how_20to_20use_20this_20guide_5',['How to Use this Guide',['../CourseGuide.html#autotoc_md1',1,'']]],
+  ['hpp_20tt_6',['hpp tt',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md200',1,'Public header — &lt;tt&gt;course/include/LectureExample_publicAPI.hpp&lt;/tt&gt;'],['../group__ExampleLesson__09__Boilerplate.html#autotoc_md205',1,'Public header — &lt;tt&gt;student/include/StudentExample_publicAPI.hpp&lt;/tt&gt;']]],
+  ['hpp_20tt_20header_20files_7',['3.1 &lt;tt&gt;.hpp&lt;/tt&gt; (Header Files)',['../group__ExampleLesson__03__FileExtensions.html#autotoc_md180',1,'']]],
+  ['hpp_20tt_20you_20document_3a_8',['In &lt;tt&gt;include/…_publicAPI.hpp&lt;/tt&gt; you document:',['../group__ExampleLesson__07__DocsPhilosophy.html#autotoc_md195',1,'']]]
 ];
