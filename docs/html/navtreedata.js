@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "cpp-course-template", "index.html", [
     [ "C++ Course Template — Documentation Portal", "index.html", "index" ],
+    [ "Course Guide", "CourseGuide_Page.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -39,7 +40,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"group__CG__01__RepositorySetup.html"
+"CourseGuide_Page.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
