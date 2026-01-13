@@ -19,6 +19,6 @@ var searchData=
   ['1_20tt_20hpp_20tt_20header_20files_16',['3.1 &lt;tt&gt;.hpp&lt;/tt&gt; (Header Files)',['../group__ExampleLesson__03__FileExtensions.html#autotoc_md186',1,'']]],
   ['10_200_20first_20build_17',['10.0 First Build',['../group__CG__01__RepositorySetup.html#autotoc_md37',1,'']]],
   ['10_200_20summary_20—_20what_20lesson_200_20teaches_18',['10.0 Summary — What Lesson 0 Teaches',['../group__ExampleLesson__10__Summary.html#autotoc_md217',1,'']]],
-  ['10_5fsummary_19',['10_Summary',['../md_course_2docs_2Lessons_2Example_210__Summary.html',1,'']]],
+  ['10_5fsummary_19',['10_Summary',['../group__Example__Lesson.html',1,'']]],
   ['11_200_20instructor_20notes_20optional_20',['11.0 Instructor Notes (Optional)',['../group__CG__01__RepositorySetup.html#autotoc_md39',1,'']]]
 ];
