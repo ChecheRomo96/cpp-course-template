@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['file_20extensions_0',['File Extensions',['../group__ExampleLesson__03__FileExtensions.html',1,'']]]
+  ['lesson_0',['Example Lesson',['../group__Example__Lesson.html',1,'']]],
+  ['lessons_1',['Course Lessons',['../group__CourseLessons.html',1,'']]]
 ];

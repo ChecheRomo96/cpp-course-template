@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['documentation_20generation_0',['Documentation Generation',['../group__CG__LocalWorkflow__05__Doxygen.html',1,'']]],
-  ['documentation_20philosophy_1',['Documentation Philosophy',['../group__ExampleLesson__07__DocsPhilosophy.html',1,'']]]
+  ['example_20lesson_0',['Example Lesson',['../group__Example__Lesson.html',1,'']]],
+  ['executables_1',['Running Executables',['../group__CG__LocalWorkflow__02__RunningExecutables.html',1,'']]]
 ];

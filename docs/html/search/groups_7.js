@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['integration_0',['CMake Integration',['../group__ExampleLesson__06__CMakeIntegration.html',1,'']]]
+  ['testing_0',['Testing',['../group__CG__LocalWorkflow__04__CoverageTesting.html',1,'Coverage Testing'],['../group__CG__LocalWorkflow__03__UnitTesting.html',1,'Unit Testing']]]
 ];

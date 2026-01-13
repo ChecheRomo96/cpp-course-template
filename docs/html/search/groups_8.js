@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['lesson_0',['Example Lesson',['../group__Example__Lesson.html',1,'']]],
-  ['lesson_20summary_1',['Lesson Summary',['../group__ExampleLesson__10__Summary.html',1,'']]],
-  ['lessons_2',['Course Lessons',['../group__CourseLessons.html',1,'']]]
+  ['unit_20testing_0',['Unit Testing',['../group__CG__LocalWorkflow__03__UnitTesting.html',1,'']]]
 ];

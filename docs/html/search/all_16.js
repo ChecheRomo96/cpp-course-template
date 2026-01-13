@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['macos_0',['macOS',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md67',1,'3. Running Executables on Linux/macOS'],['../group__CG__LocalWorkflow__05__Doxygen.html#autotoc_md137',1,'Linux/macOS']]],
-  ['main_20ci_20pipeline_1',['3.1 &lt;span class=&quot;tt&quot;&gt;ci.yml&lt;/span&gt; — Main CI Pipeline',['../group__CG__04__GitHubWorkflow.html#autotoc_md165',1,'']]],
-  ['main_20page_20and_20documentation_20groups_2',['Main Page and Documentation Groups',['../group__CG__LocalWorkflow__05__Doxygen.html#autotoc_md140',1,'']]],
-  ['making_20googletest_20available_3',['5. Making GoogleTest Available',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md91',1,'']]],
-  ['manual_20compilation_20with_20cmake_4',['Manual Compilation with CMake',['../group__CG__LocalWorkflow__01__Building.html#autotoc_md54',1,'']]],
-  ['manual_20repositories_5',['2.1 Initial Commit (Only for Manual Repositories)',['../group__CG__04__GitHubWorkflow.html#autotoc_md153',1,'']]],
-  ['myprivateapi_6',['MyPrivateAPI',['../namespaceLectureLib.html#aa7d5fc308be923fb85081e4f713012e7',1,'LectureLib::MyPrivateAPI()'],['../namespaceStudentLib.html#abed046ebc9caea877caa90eb312866e2',1,'StudentLib::MyPrivateAPI()']]],
-  ['mypublicapi_7',['MyPublicAPI',['../namespaceLectureLib.html#a6195f87b9a784f0e9c13485baa48cb71',1,'LectureLib::MyPublicAPI()'],['../namespaceStudentLib.html#afbb03aad831098b00f2cc6f83d1bf838',1,'StudentLib::MyPublicAPI()']]]
+  ['name_0',['b) Generating a test executable name',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md95',1,'']]],
+  ['naming_20conventions_20for_20example_20executables_1',['1. Naming Conventions for Example Executables',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md63',1,'']]],
+  ['new_20documentation_2',['Writing New Documentation',['../group__CG__LocalWorkflow__05__Doxygen.html#autotoc_md142',1,'']]],
+  ['notes_20for_20windows_20users_3',['Notes for Windows Users',['../group__CG__LocalWorkflow__01__Building.html#autotoc_md58',1,'']]],
+  ['notes_20optional_4',['11.0 Instructor Notes (Optional)',['../group__CG__01__RepositorySetup.html#autotoc_md33',1,'']]]
 ];
