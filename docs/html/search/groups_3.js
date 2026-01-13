@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['generation_0',['Documentation Generation',['../group__CG__LocalWorkflow__05__Doxygen.html',1,'']]],
-  ['github_20workflow_1',['Github Workflow',['../group__CG__04__GitHubWorkflow.html',1,'']]],
-  ['guide_2',['Course Guide',['../group__CourseGuide.html',1,'']]]
+  ['directory_20structure_0',['Directory Structure',['../group__CG__02__DirectoryStructure.html',1,'']]],
+  ['documentation_20generation_1',['Documentation Generation',['../group__CG__LocalWorkflow__05__Doxygen.html',1,'']]],
+  ['documentation_20philosophy_2',['Documentation Philosophy',['../group__ExampleLesson__07__DocsPhilosophy.html',1,'']]]
 ];

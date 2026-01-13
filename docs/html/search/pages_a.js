@@ -1,26 +1,5 @@
 var searchData=
 [
-  ['a_20coverage_20build_0',['2. Configuring a Coverage Build',['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md103',1,'']]],
-  ['a_20discovering_20cc_20test_20files_1',['a) Discovering &lt;span class=&quot;tt&quot;&gt;.cc&lt;/span&gt; test files',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md75',1,'']]],
-  ['a_20student_2',['Extending Tests as a Student',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md95',1,'']]],
-  ['a_20test_20executable_20name_3',['b) Generating a test executable name',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md76',1,'']]],
-  ['a_3a_20from_20the_20build_20directory_4',['Option A: From the &lt;span class=&quot;tt&quot;&gt;build/&lt;/span&gt; directory',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md49',1,'']]],
-  ['actions_20and_20pages_5',['Repository Setup: Forking, Cloning, Actions, and Pages',['../group__CG__01__RepositorySetup.html#autotoc_md0',1,'']]],
-  ['actions_20important_6',['3.0 Activating GitHub Actions (Important)',['../group__CG__01__RepositorySetup.html#autotoc_md8',1,'']]],
-  ['activating_20ctest_7',['2. Activating CTest',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md64',1,'']]],
-  ['activating_20github_20actions_20important_8',['3.0 Activating GitHub Actions (Important)',['../group__CG__01__RepositorySetup.html#autotoc_md8',1,'']]],
-  ['add_20upstream_20remote_9',['Step 3 — Add upstream remote',['../group__CG__01__RepositorySetup.html#autotoc_md18',1,'']]],
-  ['adding_20the_20instructor_20repository_20as_20upstream_10',['5.0 Adding the Instructor Repository as Upstream',['../group__CG__01__RepositorySetup.html#autotoc_md17',1,'']]],
-  ['all_20tests_11',['8. Running All Tests',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md85',1,'']]],
-  ['and_20deployment_20set_3a_12',['Step 2 — Under &lt;em&gt;Build and Deployment&lt;/em&gt;, set:',['../group__CG__01__RepositorySetup.html#autotoc_md12',1,'']]],
-  ['and_20instructors_13',['2.0 Initial Setup — Students &lt;b&gt;and&lt;/b&gt; Instructors',['../group__CG__04__GitHubWorkflow.html#autotoc_md117',1,'']]],
-  ['and_20lcov_14',['Coverage Testing with CMake, GCOV, and LCOV',['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md97',1,'']]],
-  ['and_20pages_15',['Repository Setup: Forking, Cloning, Actions, and Pages',['../group__CG__01__RepositorySetup.html#autotoc_md0',1,'']]],
-  ['and_20targets_16',['5.0 Libraries and Targets',['../group__CG__02__DirectoryStructure.html#autotoc_md40',1,'']]],
-  ['are_20the_20executables_20generated_17',['2. Where Are the Executables Generated?',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md46',1,'']]],
-  ['as_20a_20student_18',['Extending Tests as a Student',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md95',1,'']]],
-  ['as_20upstream_19',['5.0 Adding the Instructor Repository as Upstream',['../group__CG__01__RepositorySetup.html#autotoc_md17',1,'']]],
-  ['automatic_20test_20discovery_20for_20instructor_20tests_20course_20tests_20',['6. Automatic Test Discovery for Instructor Tests (&lt;span class=&quot;tt&quot;&gt;course/tests/&lt;/span&gt;)',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md74',1,'']]],
-  ['automatic_20test_20discovery_20for_20student_20tests_20student_20tests_21',['7. Automatic Test Discovery for Student Tests (&lt;span class=&quot;tt&quot;&gt;student/tests/&lt;/span&gt;)',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md83',1,'']]],
-  ['available_22',['5. Making GoogleTest Available',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md72',1,'']]]
+  ['_5ftarget_20cpp_0',['5.1 Example Executables (&lt;span class=&quot;tt&quot;&gt;*_target.cpp&lt;/span&gt;)',['../group__ExampleLesson__05__ExamplesVsUnitTests.html#autotoc_md185',1,'']]],
+  ['_5funittests_20cc_1',['5.2 Unit Tests (&lt;span class=&quot;tt&quot;&gt;*_unitTests.cc&lt;/span&gt;)',['../group__ExampleLesson__05__ExamplesVsUnitTests.html#autotoc_md186',1,'']]]
 ];
