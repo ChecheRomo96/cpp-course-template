@@ -1,1 +1,1 @@
-genhtml coverage.filtered.info --output-directory site/coverage
+genhtml tmp/coverage.final.info --output-directory site/coverage --quiet

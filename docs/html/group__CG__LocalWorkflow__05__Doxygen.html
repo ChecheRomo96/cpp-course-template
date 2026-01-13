@@ -101,10 +101,10 @@ Collaboration diagram for Documentation Generation:</div>
 <area shape="rect" title=" " alt="" coords="173,5,372,31"/>
 </map>
 </div>
-<h1><a class="anchor" id="autotoc_md116"></a>
+<h1><a class="anchor" id="autotoc_md138"></a>
 Documentation with Doxygen</h1>
 <p>Part of the Local Workflow System</p>
-<h2><a class="anchor" id="autotoc_md117"></a>
+<h2><a class="anchor" id="autotoc_md139"></a>
 Introduction</h2>
 <p>Doxygen is used to generate navigable documentation from:</p>
 <ul>
@@ -117,7 +117,7 @@ Introduction</h2>
 <li>Students get clear API reference and module structure</li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md119"></a>
+<h2><a class="anchor" id="autotoc_md141"></a>
 Doxyfile Configuration</h2>
 <p>The main configuration file is located at: </p><pre class="fragment">docs/Doxyfile
 </pre><p> Typical parameters:</p>
@@ -137,9 +137,9 @@ INPUT = \
   student/src
 </pre><p> This produces: </p><pre class="fragment">site/docs/html/index.html
 </pre> <hr  />
-<h2><a class="anchor" id="autotoc_md120"></a>
+<h2><a class="anchor" id="autotoc_md142"></a>
 Generating Documentation via Scripts</h2>
-<h3><a class="anchor" id="autotoc_md121"></a>
+<h3><a class="anchor" id="autotoc_md143"></a>
 Linux/macOS</h3>
 <p>Run:</p>
 <div class="fragment"><div class="line"> sh</div>
@@ -152,7 +152,7 @@ Linux/macOS</h3>
 <div class="line">echo &quot;▶ Running Doxygen...&quot;</div>
 <div class="line">doxygen docs/Doxyfile</div>
 <div class="line">echo &quot;✔ Doxygen documentation generated&quot;</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md122"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md144"></a>
 Windows (PowerShell)</h3>
 <div class="fragment"><div class="line"> ps1</div>
 <div class="line"># scripts/update_docs.ps1</div>
@@ -170,7 +170,7 @@ Windows (PowerShell)</h3>
 <div class="line">doxygen $Doxyfile</div>
 <div class="line">Write-Host &quot;✔ Doxygen documentation generated.&quot;</div>
 </div><!-- fragment --><hr  />
-<h2><a class="anchor" id="autotoc_md124"></a>
+<h2><a class="anchor" id="autotoc_md146"></a>
 Main Page and Documentation Groups</h2>
 <p>Typically, <code>docs/mainpage.dox</code> defines:</p>
 <ul>
@@ -187,15 +187,15 @@ Main Page and Documentation Groups</h2>
 <div class="line"> * - Other course topics...</div>
 <div class="line"> */</div>
 </div><!-- fragment --><hr  />
-<h2><a class="anchor" id="autotoc_md126"></a>
+<h2><a class="anchor" id="autotoc_md148"></a>
 Writing New Documentation</h2>
 <p>There are two ways to write documentation:</p>
-<h3><a class="anchor" id="autotoc_md127"></a>
+<h3><a class="anchor" id="autotoc_md149"></a>
 1. Doxygen Comments Inside Code</h3>
 <div class="fragment"><div class="line"> cpp</div>
 <div class="line">/// @brief Adds two integers.</div>
 <div class="line">int Add(int a, int b);</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md128"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md150"></a>
 2. &lt;tt&gt;.dox&lt;/tt&gt; Files</h3>
 <div class="fragment"><div class="line"> cpp</div>
 <div class="line">/**</div>
@@ -208,7 +208,7 @@ Writing New Documentation</h2>
 <div class="fragment"><div class="line"> sh</div>
 <div class="line">./scripts/update_docs.sh</div>
 </div><!-- fragment --><hr  />
-<h2><a class="anchor" id="autotoc_md130"></a>
+<h2><a class="anchor" id="autotoc_md152"></a>
 Integrating Everything Into a Single Site</h2>
 <p>You can combine:</p>
 <ul>

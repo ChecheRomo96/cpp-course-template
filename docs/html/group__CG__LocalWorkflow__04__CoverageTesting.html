@@ -101,10 +101,10 @@ Collaboration diagram for Coverage Testing:</div>
 <area shape="rect" title=" " alt="" coords="173,5,308,31"/>
 </map>
 </div>
-<h1><a class="anchor" id="autotoc_md100"></a>
+<h1><a class="anchor" id="autotoc_md122"></a>
 Coverage Testing with CMake, GCOV, and LCOV</h1>
 <p>Part of the Local Workflow System</p>
-<h2><a class="anchor" id="autotoc_md101"></a>
+<h2><a class="anchor" id="autotoc_md123"></a>
 Introduction</h2>
 <p>Code coverage answers a simple question:</p>
 <blockquote class="doxtable">
@@ -120,7 +120,7 @@ Introduction</h2>
 <div class="fragment"><div class="line">option(ENABLE_COVERAGE &quot;Enable coverage flags&quot; OFF)</div>
 </div><!-- fragment --><p>When <code>ENABLE_COVERAGE=ON</code>, extra compiler and linker flags are added so tools like <b>gcov</b> and <b>lcov</b> can generate coverage reports.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md103"></a>
+<h2><a class="anchor" id="autotoc_md125"></a>
 1. Coverage Flags in CMake</h2>
 <p>Relevant section from <code>CMakeLists.txt</code>:</p>
 <div class="fragment"><div class="line">if(ENABLE_COVERAGE)</div>
@@ -134,7 +134,7 @@ Introduction</h2>
 <div class="line">        link_libraries(--coverage)</div>
 <div class="line">    endif()</div>
 <div class="line">endif()</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md104"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md126"></a>
 What this does:</h3>
 <ul>
 <li>Checks if <code>ENABLE_COVERAGE</code> is <code>ON</code></li>
@@ -148,9 +148,9 @@ What this does:</h3>
 <blockquote class="doxtable">
 <p>&zwj;Important: Coverage builds should generally be <b>Debug</b> builds with <b>no optimizations</b>, otherwise some lines may be optimized away and appear as "not executed". </p>
 </blockquote>
-<h2><a class="anchor" id="autotoc_md105"></a>
+<h2><a class="anchor" id="autotoc_md127"></a>
 &lt;/blockquote&gt;</h2>
-<h2><a class="anchor" id="autotoc_md106"></a>
+<h2><a class="anchor" id="autotoc_md128"></a>
 2. Configuring a Coverage Build</h2>
 <p>From the repository root:</p>
 <div class="fragment"><div class="line">cmake -S . -B build \</div>
@@ -166,13 +166,13 @@ What this does:</h3>
 <p>To rebuild:</p>
 <div class="fragment"><div class="line">cmake --build build --parallel</div>
 </div><!-- fragment --><hr  />
-<h2><a class="anchor" id="autotoc_md108"></a>
+<h2><a class="anchor" id="autotoc_md130"></a>
 3. Running Tests to Collect Coverage Data</h2>
 <p>Coverage data is only generated when binaries are executed.\ To run all tests:</p>
 <div class="fragment"><div class="line">ctest --test-dir build --output-on-failure</div>
 </div><!-- fragment --><p>After this step, the compiler/linker will have produced coverage data files (e.g., <code>.gcda</code>, <code>.gcno</code>) under the <code>build/</code> directory.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md110"></a>
+<h2><a class="anchor" id="autotoc_md132"></a>
 4. Generating Coverage Reports (GCOV + LCOV)</h2>
 <p>A typical workflow on Linux/macOS is:</p>
 <ol type="1">
@@ -223,9 +223,9 @@ What this does:</h3>
 </div><!-- fragment --><blockquote class="doxtable">
 <p>&zwj;Note: The exact script name and paths may vary in your repository,\ but the idea remains: <b>configure with coverage → build → run tests → lcov + genhtml.</b> </p>
 </blockquote>
-<h2><a class="anchor" id="autotoc_md111"></a>
+<h2><a class="anchor" id="autotoc_md133"></a>
 &lt;/blockquote&gt;</h2>
-<h2><a class="anchor" id="autotoc_md112"></a>
+<h2><a class="anchor" id="autotoc_md134"></a>
 5. Typical Output Layout</h2>
 <p>Assuming the script writes to <code>site/coverage</code>, you get:</p>
 <ul>
@@ -239,7 +239,7 @@ What this does:</h3>
 </ul>
 <p>See the <b>Doxygen</b> and <b>Unit Testing</b> documentation pages for how to wire everything together in a unified <code>site/index.html</code>.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md114"></a>
+<h2><a class="anchor" id="autotoc_md136"></a>
 6. Usage Summary</h2>
 <ol type="1">
 <li><p class="startli">Configure for coverage:</p>

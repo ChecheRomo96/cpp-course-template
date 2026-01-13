@@ -1,11 +1,22 @@
 var searchData=
 [
-  ['macos_0',['macos',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md51',1,'3. Running Executables on Linux/macOS'],['../group__CG__LocalWorkflow__05__Doxygen.html#autotoc_md121',1,'Linux/macOS']]],
-  ['main_20ci_20pipeline_1',['3.1 &lt;tt&gt;ci.yml&lt;/tt&gt; — Main CI Pipeline',['../group__CG__04__GitHubWorkflow.html#autotoc_md149',1,'']]],
-  ['main_20page_20and_20documentation_20groups_2',['Main Page and Documentation Groups',['../group__CG__LocalWorkflow__05__Doxygen.html#autotoc_md124',1,'']]],
-  ['making_20googletest_20available_3',['5. Making GoogleTest Available',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md75',1,'']]],
-  ['manual_20compilation_20with_20cmake_4',['Manual Compilation with CMake',['../group__CG__LocalWorkflow__01__Building.html#autotoc_md38',1,'']]],
-  ['manual_20repositories_5',['2.1 Initial Commit (Only for Manual Repositories)',['../group__CG__04__GitHubWorkflow.html#autotoc_md137',1,'']]],
-  ['myprivateapi_6',['myprivateapi',['../namespaceLectureLib.html#aa7d5fc308be923fb85081e4f713012e7',1,'LectureLib::MyPrivateAPI()'],['../namespaceStudentLib.html#abed046ebc9caea877caa90eb312866e2',1,'StudentLib::MyPrivateAPI()']]],
-  ['mypublicapi_7',['mypublicapi',['../namespaceLectureLib.html#a6195f87b9a784f0e9c13485baa48cb71',1,'LectureLib::MyPublicAPI()'],['../namespaceStudentLib.html#afbb03aad831098b00f2cc6f83d1bf838',1,'StudentLib::MyPublicAPI()']]]
+  ['layout_0',['layout',['../group__CG__02__DirectoryStructure.html#autotoc_md41',1,'1.0 Top-Level Layout'],['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md134',1,'5. Typical Output Layout']]],
+  ['lcov_1',['lcov',['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md132',1,'4. Generating Coverage Reports (GCOV + LCOV)'],['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md122',1,'Coverage Testing with CMake, GCOV, and LCOV']]],
+  ['lectureexample_5fprivateapi_20cpp_20tt_2',['Implementation — &lt;tt&gt;course/src/LectureExample_privateAPI.cpp&lt;/tt&gt;',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md207',1,'']]],
+  ['lectureexample_5fpublicapi_20hpp_20tt_3',['Public header — &lt;tt&gt;course/include/LectureExample_publicAPI.hpp&lt;/tt&gt;',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md206',1,'']]],
+  ['lectureexample_5ftarget_20cpp_20tt_4',['Example — &lt;tt&gt;course/examples/LectureExample_target.cpp&lt;/tt&gt;',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md208',1,'']]],
+  ['lecturelib_5',['LectureLib',['../namespaceLectureLib.html',1,'']]],
+  ['lesson_6',['Example Lesson',['../group__Example__Lesson.html',1,'']]],
+  ['lesson_200_7',['Lesson 0',['../group__CourseGuide.html#autotoc_md7',1,'']]],
+  ['lesson_200_20teaches_8',['10.0 Summary — What Lesson 0 Teaches',['../group__ExampleLesson__10__Summary.html#autotoc_md217',1,'']]],
+  ['lesson_20summary_9',['Lesson Summary',['../group__ExampleLesson__10__Summary.html',1,'']]],
+  ['lessons_10',['lessons',['../group__CourseLessons.html',1,'Course Lessons'],['../md_course_2docs_2Lessons_2Lessons.html',1,'Lessons']]],
+  ['level_20layout_11',['1.0 Top-Level Layout',['../group__CG__02__DirectoryStructure.html#autotoc_md41',1,'']]],
+  ['libraries_12',['d) Linking required libraries',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md104',1,'']]],
+  ['libraries_20and_20targets_13',['5.0 Libraries and Targets',['../group__CG__02__DirectoryStructure.html#autotoc_md49',1,'']]],
+  ['linking_20required_20libraries_14',['d) Linking required libraries',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md104',1,'']]],
+  ['linux_20macos_15',['linux macos',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md73',1,'3. Running Executables on Linux/macOS'],['../group__CG__LocalWorkflow__05__Doxygen.html#autotoc_md143',1,'Linux/macOS']]],
+  ['local_20configuration_16',['9.0 First Local Configuration',['../group__CG__01__RepositorySetup.html#autotoc_md35',1,'']]],
+  ['local_20workflow_17',['local workflow',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md81',1,'6. Typical Local Workflow'],['../group__CG__03__LocalWorkflow.html',1,'Local Workflow'],['../group__CourseGuide.html#autotoc_md5',1,'Local Workflow']]],
+  ['locally_18',['locally',['../group__CG__LocalWorkflow__01__Building.html#autotoc_md50',1,'Building the Project Locally'],['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md66',1,'Running Executables Locally'],['../group__CG__01__RepositorySetup.html#autotoc_md14',1,'Step 2 — Clone your fork locally']]]
 ];

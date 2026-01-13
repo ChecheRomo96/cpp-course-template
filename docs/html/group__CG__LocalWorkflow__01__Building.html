@@ -101,7 +101,7 @@ Collaboration diagram for Building:</div>
 <area shape="rect" title=" " alt="" coords="173,5,248,31"/>
 </map>
 </div>
-<h1><a class="anchor" id="autotoc_md28"></a>
+<h1><a class="anchor" id="autotoc_md50"></a>
 Building the Project Locally</h1>
 <p>Part of the Local Workflow Documentation</p>
 <p>This document is part of the <b>local workflow</b> for the C++ course. Here you will learn:</p>
@@ -118,29 +118,29 @@ Building the Project Locally</h1>
 <li>The student works inside <code>student/</code></li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 Project Structure Overview</h2>
 <p>The repository is organized as follows:</p>
-<h3><a class="anchor" id="autotoc_md31"></a>
+<h3><a class="anchor" id="autotoc_md53"></a>
 **&lt;tt&gt;course/&lt;/tt&gt;**</h3>
 <p>Reference code from the instructor (example implementations, tests, utilities). Students read this code but do not modify it.</p>
-<h3><a class="anchor" id="autotoc_md32"></a>
+<h3><a class="anchor" id="autotoc_md54"></a>
 **&lt;tt&gt;student/&lt;/tt&gt;**</h3>
 <p>The code students must complete. All student solutions, their own tests, and their examples live here.</p>
-<h3><a class="anchor" id="autotoc_md33"></a>
+<h3><a class="anchor" id="autotoc_md55"></a>
 **&lt;tt&gt;cmake/&lt;/tt&gt;**</h3>
 <p>Helper CMake modules.</p>
-<h3><a class="anchor" id="autotoc_md34"></a>
+<h3><a class="anchor" id="autotoc_md56"></a>
 **&lt;tt&gt;docs/&lt;/tt&gt;**</h3>
 <p>Documentation written in Doxygen format (<code>.dox</code> or <code>.md</code>).</p>
-<h3><a class="anchor" id="autotoc_md35"></a>
+<h3><a class="anchor" id="autotoc_md57"></a>
 **&lt;tt&gt;scripts/&lt;/tt&gt;**</h3>
 <p>Automation scripts for testing, coverage, configuration, and documentation.</p>
-<h3><a class="anchor" id="autotoc_md36"></a>
+<h3><a class="anchor" id="autotoc_md58"></a>
 **&lt;tt&gt;build/&lt;/tt&gt;**</h3>
 <p>Directory generated automatically by CMake during compilation.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md60"></a>
 Manual Compilation with CMake</h2>
 <p>To understand what happens internally, you can run the commands manually.</p>
 <p>From the repository root:</p>
@@ -161,7 +161,7 @@ Manual Compilation with CMake</h2>
 <li><code>build/StudentExample_target</code></li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md62"></a>
 Compilation Using Scripts</h2>
 <p>The <code>scripts/</code> folder contains helper scripts to simplify the workflow.</p>
 <p>On Linux/macOS, you can run:</p>
@@ -196,7 +196,7 @@ Compilation Using Scripts</h2>
 <div class="line">echo &quot;✔ Tests finished.&quot;</div>
 </div><!-- fragment --><p>The idea is to allow fast iteration without remembering every CMake command,\ while still enabling you to inspect the scripts to understand what happens <em>under the hood</em>.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md64"></a>
 Notes for Windows Users</h2>
 <p>On Windows, we recommend using <b>PowerShell</b> with <code>.ps1</code> scripts.\ An equivalent to <code>run_tests.sh</code> would be:</p>
 <div class="fragment"><div class="line"> ps1</div>
