@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['registering_20the_20test_20in_20ctest_0',['e) Registering the test in CTest',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md100',1,'']]],
+  ['remote_1',['Step 3 — Add upstream remote',['../group__CG__01__RepositorySetup.html#autotoc_md20',1,'']]],
+  ['remotes_2',['Step 4 — Verify remotes',['../group__CG__01__RepositorySetup.html#autotoc_md21',1,'']]],
+  ['reports_20gcov_20lcov_3',['4. Generating Coverage Reports (GCOV + LCOV)',['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md126',1,'']]],
+  ['repositories_4',['2.1 Initial Commit (Only for Manual Repositories)',['../group__CG__04__GitHubWorkflow.html#autotoc_md153',1,'']]],
+  ['repository_5',['Step 1 — Open the instructor repository',['../group__CG__01__RepositorySetup.html#autotoc_md5',1,'']]],
+  ['repository_20as_20upstream_6',['5.0 Adding the Instructor Repository as Upstream',['../group__CG__01__RepositorySetup.html#autotoc_md19',1,'']]],
+  ['repository_20is_20organized_20this_20way_7',['2.0 Why the Repository Is Organized This Way',['../group__ExampleLesson__02__RepositoryStructure.html#autotoc_md178',1,'']]],
+  ['repository_20root_8',['Option B: From the repository root',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md69',1,'']]],
+  ['repository_20setup_3a_20forking_20cloning_20actions_20and_20pages_9',['Repository Setup: Forking, Cloning, Actions, and Pages',['../group__CG__01__RepositorySetup.html#autotoc_md2',1,'']]],
+  ['reproducible_20googletest_20download_20using_20fetchcontent_10',['3. Reproducible GoogleTest Download Using FetchContent',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md86',1,'']]],
+  ['required_20for_20students_11',['1.0 Creating Your Fork (Required for Students)',['../group__CG__01__RepositorySetup.html#autotoc_md4',1,'']]],
+  ['required_20libraries_12',['d) Linking required libraries',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md98',1,'']]],
+  ['required_20toolchain_13',['7.0 Required Toolchain',['../group__CG__01__RepositorySetup.html#autotoc_md25',1,'']]],
+  ['required_3a_14',['Why this is required:',['../group__CG__01__RepositorySetup.html#autotoc_md15',1,'']]],
+  ['root_15',['Option B: From the repository root',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md69',1,'']]],
+  ['run_20tests_3a_16',['Run tests:',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md106',1,'']]],
+  ['running_20all_20tests_17',['8. Running All Tests',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md104',1,'']]],
+  ['running_20executables_20locally_18',['Running Executables Locally',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md60',1,'']]],
+  ['running_20executables_20on_20linux_20macos_19',['3. Running Executables on Linux/macOS',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md67',1,'']]],
+  ['running_20executables_20on_20windows_20powershell_20cmd_20',['4. Running Executables on Windows (PowerShell / CMD)',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md71',1,'']]],
+  ['running_20test_20binaries_20vs_20example_20executables_21',['5. Running Test Binaries (vs Example Executables)',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md73',1,'']]],
+  ['running_20tests_20to_20collect_20coverage_20data_22',['3. Running Tests to Collect Coverage Data',['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md124',1,'']]]
+];

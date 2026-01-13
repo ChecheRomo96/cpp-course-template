@@ -7,5 +7,5 @@ var searchData=
   ['vs_20example_20executables_4',['5. Running Test Binaries (vs Example Executables)',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md73',1,'']]],
   ['vs_20private_20apis_5',['4.0 Public vs Private APIs',['../group__ExampleLesson__04__PrivateVsPublic.html#autotoc_md184',1,'']]],
   ['vs_20public_20api_6',['Private Vs Public API',['../group__ExampleLesson__04__PrivateVsPublic.html',1,'']]],
-  ['vs_20unit_20tests_7',['vs unit tests',['../group__ExampleLesson__05__ExamplesVsUnitTests.html#autotoc_md187',1,'5.0 Example Targets vs. Unit Tests'],['../group__ExampleLesson__05__ExamplesVsUnitTests.html',1,'Examples vs Unit Tests']]]
+  ['vs_20unit_20tests_7',['vs Unit Tests',['../group__ExampleLesson__05__ExamplesVsUnitTests.html#autotoc_md187',1,'5.0 Example Targets vs. Unit Tests'],['../group__ExampleLesson__05__ExamplesVsUnitTests.html',1,'Examples vs Unit Tests']]]
 ];

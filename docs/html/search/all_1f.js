@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['walkthrough_0',['walkthrough',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md198',1,'9.0 Boilerplate Code Walkthrough'],['../group__ExampleLesson__09__Boilerplate.html',1,'Boilerplate Code Walkthrough']]],
-  ['way_1',['way',['../group__ExampleLesson__02__RepositoryStructure.html#autotoc_md178',1,'2.0 Why the Repository Is Organized This Way'],['../group__ExampleLesson__03__FileExtensions.html#autotoc_md179',1,'3.0 Why File Extensions Are Chosen This Way']]],
+  ['walkthrough_0',['Walkthrough',['../group__ExampleLesson__09__Boilerplate.html#autotoc_md198',1,'9.0 Boilerplate Code Walkthrough'],['../group__ExampleLesson__09__Boilerplate.html',1,'Boilerplate Code Walkthrough']]],
+  ['way_1',['Way',['../group__ExampleLesson__02__RepositoryStructure.html#autotoc_md178',1,'2.0 Why the Repository Is Organized This Way'],['../group__ExampleLesson__03__FileExtensions.html#autotoc_md179',1,'3.0 Why File Extensions Are Chosen This Way']]],
   ['we_20use_20this_20template_2',['8.0 Why We Use This Template',['../group__ExampleLesson__08__WhyUseThisTemplate.html#autotoc_md197',1,'']]],
   ['what_20lesson_200_20teaches_3',['10.0 Summary — What Lesson 0 Teaches',['../group__ExampleLesson__10__Summary.html#autotoc_md211',1,'']]],
-  ['what_20this_20does_3a_4',['what this does:',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md84',1,'What this does:'],['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md120',1,'What this does:']]],
+  ['what_20this_20does_3a_4',['What this does:',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md84',1,'What this does:'],['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md120',1,'What this does:']]],
   ['where_20are_20the_20executables_20generated_5',['2. Where Are the Executables Generated?',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md65',1,'']]],
   ['why_20fetchcontent_6',['Why FetchContent?',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md87',1,'']]],
   ['why_20file_20extensions_20are_20chosen_20this_20way_7',['3.0 Why File Extensions Are Chosen This Way',['../group__ExampleLesson__03__FileExtensions.html#autotoc_md179',1,'']]],
@@ -21,7 +21,7 @@ var searchData=
   ['with_20cmake_20gcov_20and_20lcov_18',['Coverage Testing with CMake, GCOV, and LCOV',['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md116',1,'']]],
   ['with_20doxygen_19',['Documentation with Doxygen',['../group__CG__LocalWorkflow__05__Doxygen.html#autotoc_md132',1,'']]],
   ['with_20tests_20enabled_3a_20',['Build with tests enabled:',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md105',1,'']]],
-  ['workflow_21',['workflow',['../group__CG__04__GitHubWorkflow.html#autotoc_md149',1,'1.0 Purpose of the GitHub Workflow'],['../group__CG__04__GitHubWorkflow.html#autotoc_md169',1,'4.0 Student Workflow'],['../group__CG__04__GitHubWorkflow.html#autotoc_md171',1,'5.0 Instructor Workflow'],['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md75',1,'6. Typical Local Workflow']]],
+  ['workflow_21',['Workflow',['../group__CG__04__GitHubWorkflow.html#autotoc_md149',1,'1.0 Purpose of the GitHub Workflow'],['../group__CG__04__GitHubWorkflow.html#autotoc_md169',1,'4.0 Student Workflow'],['../group__CG__04__GitHubWorkflow.html#autotoc_md171',1,'5.0 Instructor Workflow'],['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md75',1,'6. Typical Local Workflow']]],
   ['workflows_22',['3.0 Understanding the CI Workflows',['../group__CG__04__GitHubWorkflow.html#autotoc_md163',1,'']]],
   ['writing_20new_20documentation_23',['Writing New Documentation',['../group__CG__LocalWorkflow__05__Doxygen.html#autotoc_md142',1,'']]]
 ];

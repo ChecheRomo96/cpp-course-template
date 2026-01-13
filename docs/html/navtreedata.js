@@ -26,22 +26,11 @@ var NAVTREE =
 [
   [ "cpp-course-template", "index.html", [
     [ "C++ Course Template — Documentation Portal", "index.html", "index" ],
-    [ "00_CourseGuide", "md_docs_2CourseGuide_200__CourseGuide.html", null ],
     [ "Course Guide", "CourseGuide.html", [
       [ "Course Guide Overview", "CourseGuide.html#autotoc_md0", [
         [ "How to Use this Guide", "CourseGuide.html#autotoc_md1", null ]
       ] ]
     ] ],
-    [ "01_RepositorySetup", "md_docs_2CourseGuide_201__RepositorySetup.html", null ],
-    [ "02_DirectoryStructure", "md_docs_2CourseGuide_202__DirectoryStructure.html", null ],
-    [ "01_Building", "md_docs_2CourseGuide_203__LocalWorkflow_201__Building.html", null ],
-    [ "02_RunningExecutables", "md_docs_2CourseGuide_203__LocalWorkflow_202__RunningExecutables.html", null ],
-    [ "03_UnitTesting", "md_docs_2CourseGuide_203__LocalWorkflow_203__UnitTesting.html", null ],
-    [ "04_CoverageTesting", "md_docs_2CourseGuide_203__LocalWorkflow_204__CoverageTesting.html", null ],
-    [ "05_Doxygen", "md_docs_2CourseGuide_203__LocalWorkflow_205__Doxygen.html", null ],
-    [ "04_GitHubWorkflow", "md_docs_2CourseGuide_204__GitHubWorkflow.html", null ],
-    [ "00_ExampleLesson", "md_course_2docs_2Lessons_2Example_200__ExampleLesson.html", null ],
-    [ "Lessons", "md_course_2docs_2Lessons_2Lessons.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -58,5 +47,6 @@ var NAVTREEINDEX =
 "CourseGuide.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'click to disable panel synchronization';
+var SYNCOFFMSG = 'click to enable panel synchronization';
+var LISTOFALLMEMBERS = 'List of all members';
