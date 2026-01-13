@@ -22,7 +22,7 @@ var searchData=
   ['conventions_20for_20example_20executables_19',['1. Naming Conventions for Example Executables',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md44',1,'']]],
   ['course_20',['2.0 Instructor Code (&lt;span class=&quot;tt&quot;&gt;course/&lt;/span&gt;)',['../group__CG__02__DirectoryStructure.html#autotoc_md34',1,'']]],
   ['course_20guide_21',['Course Guide',['../group__CourseGuide.html',1,'']]],
-  ['course_20guide_20overview_22',['Course Guide Overview',['../group__CourseGuide__Overview.html',1,'Course Guide Overview'],['../group__CourseGuide__Overview.html#autotoc_md140',1,'Course Guide Overview']]],
+  ['course_20guide_20overview_22',['Course Guide Overview',['../group__CourseGuide.html#autotoc_md140',1,'']]],
   ['course_20lessons_23',['Course Lessons',['../group__CourseLessons.html',1,'']]],
   ['course_20template_20—_20documentation_20portal_24',['C++ Course Template — Documentation Portal',['../index.html',1,'']]],
   ['course_20tests_25',['6. Automatic Test Discovery for Instructor Tests (&lt;span class=&quot;tt&quot;&gt;course/tests/&lt;/span&gt;)',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md74',1,'']]],

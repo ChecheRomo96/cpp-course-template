@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unit_20testing_0',['Unit Testing',['../group__CG__LocalWorkflow__03__UnitTesting.html',1,'']]]
+  ['workflow_0',['Workflow',['../group__CG__04__GitHubWorkflow.html',1,'Github Workflow'],['../group__CG__03__LocalWorkflow.html',1,'Local Workflow']]]
 ];

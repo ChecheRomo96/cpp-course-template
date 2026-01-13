@@ -20,6 +20,6 @@ var searchData=
   ['googletest_20s_20internal_20tests_17',['4. Disabling GoogleTest&apos;s Internal Tests',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md70',1,'']]],
   ['googletest_20skeleton_18',['Basic GoogleTest Skeleton',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md93',1,'']]],
   ['gtest_5fmain_19',['gtest_main',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md91',1,'']]],
-  ['guide_20',['How to Use this Guide',['../group__CourseGuide__Overview.html#autotoc_md141',1,'']]],
-  ['guide_20overview_21',['Course Guide Overview',['../group__CourseGuide__Overview.html#autotoc_md140',1,'']]]
+  ['guide_20',['How to Use this Guide',['../group__CourseGuide.html#autotoc_md141',1,'']]],
+  ['guide_20overview_21',['Course Guide Overview',['../group__CourseGuide.html#autotoc_md140',1,'']]]
 ];

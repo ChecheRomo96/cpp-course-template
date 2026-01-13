@@ -21,7 +21,7 @@ var searchData=
   ['configuring_20a_20coverage_20build_18',['2. Configuring a Coverage Build',['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md103',1,'']]],
   ['conventions_20for_20example_20executables_19',['1. Naming Conventions for Example Executables',['../group__CG__LocalWorkflow__02__RunningExecutables.html#autotoc_md44',1,'']]],
   ['course_20',['2.0 Instructor Code (&lt;span class=&quot;tt&quot;&gt;course/&lt;/span&gt;)',['../group__CG__02__DirectoryStructure.html#autotoc_md34',1,'']]],
-  ['course_20guide_20overview_21',['Course Guide Overview',['../group__CourseGuide__Overview.html#autotoc_md140',1,'']]],
+  ['course_20guide_20overview_21',['Course Guide Overview',['../group__CourseGuide.html#autotoc_md140',1,'']]],
   ['course_20template_20—_20documentation_20portal_22',['C++ Course Template — Documentation Portal',['../index.html',1,'']]],
   ['course_20tests_23',['6. Automatic Test Discovery for Instructor Tests (&lt;span class=&quot;tt&quot;&gt;course/tests/&lt;/span&gt;)',['../group__CG__LocalWorkflow__03__UnitTesting.html#autotoc_md74',1,'']]],
   ['coverage_20build_24',['2. Configuring a Coverage Build',['../group__CG__LocalWorkflow__04__CoverageTesting.html#autotoc_md103',1,'']]],
