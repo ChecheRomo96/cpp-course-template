@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('group__CG__LocalWorkflow__04__CoverageTesting.html','',''); });
+$(function(){initNavTree('group__CG__LocalWorkflow__05__CoverageTesting.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -94,16 +94,16 @@ $(function(){initNavTree('group__CG__LocalWorkflow__04__CoverageTesting.html',''
 <div class="dynheader">
 Collaboration diagram for Coverage Testing:</div>
 <div class="dyncontent">
-<div class="center"><img src="group__CG__LocalWorkflow__04__CoverageTesting.png" border="0" usemap="#agroup____CG____LocalWorkflow____04____CoverageTesting" loading="lazy" alt=""/></div>
-<map name="agroup____CG____LocalWorkflow____04____CoverageTesting" id="agroup____CG____LocalWorkflow____04____CoverageTesting">
+<div class="center"><img src="group__CG__LocalWorkflow__05__CoverageTesting.png" border="0" usemap="#agroup____CG____LocalWorkflow____05____CoverageTesting" loading="lazy" alt=""/></div>
+<map name="agroup____CG____LocalWorkflow____05____CoverageTesting" id="agroup____CG____LocalWorkflow____05____CoverageTesting">
 <area shape="rect" href="group__CG__03__LocalWorkflow.html" title=" " alt="" coords="5,5,125,31"/>
 <area shape="rect" title=" " alt="" coords="173,5,308,31"/>
 </map>
 </div>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md113"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md137"></a>
 Coverage Testing with CMake, GCOV, and LCOV</h1>
 <p>Part of the Local Workflow System</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md114"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md138"></a>
 Introduction</h2>
 <p>Code coverage answers a simple question:</p>
 <blockquote class="doxtable">
@@ -119,7 +119,7 @@ Introduction</h2>
 <div class="fragment"><div class="line">option(ENABLE_COVERAGE <span class="stringliteral">&quot;Enable coverage flags&quot;</span> OFF)</div>
 </div><!-- fragment --><p>When <span class="tt">ENABLE_COVERAGE=ON</span>, extra compiler and linker flags are added so tools like <b>gcov</b> and <b>lcov</b> can generate coverage reports.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md116"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md140"></a>
 1. Coverage Flags in CMake</h2>
 <p>Relevant section from <span class="tt">CMakeLists.txt</span>:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">if</span>(ENABLE_COVERAGE)</div>
@@ -133,7 +133,7 @@ Introduction</h2>
 <div class="line">        link_libraries(--coverage)</div>
 <div class="line">    endif()</div>
 <div class="line">endif()</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md117"></a>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md141"></a>
 What this does:</h3>
 <ul>
 <li>Checks if <span class="tt">ENABLE_COVERAGE</span> is <span class="tt">ON</span></li>
@@ -148,7 +148,7 @@ What this does:</h3>
 <p>Important: Coverage builds should generally be <b>Debug</b> builds with <b>no optimizations</b>, otherwise some lines may be optimized away and appear as "not executed". </p>
 </blockquote>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md119"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md143"></a>
 2. Configuring a Coverage Build</h2>
 <p>From the repository root:</p>
 <div class="fragment"><div class="line">cmake -S . -B build \</div>
@@ -164,13 +164,13 @@ What this does:</h3>
 <p>To rebuild:</p>
 <div class="fragment"><div class="line">cmake --build build --parallel</div>
 </div><!-- fragment --><hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md121"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md145"></a>
 3. Running Tests to Collect Coverage Data</h2>
 <p>Coverage data is only generated when binaries are executed.\ To run all tests:</p>
 <div class="fragment"><div class="line">ctest --test-dir build --output-on-failure</div>
 </div><!-- fragment --><p>After this step, the compiler/linker will have produced coverage data files (e.g., <span class="tt">.gcda</span>, <span class="tt">.gcno</span>) under the <span class="tt">build/</span> directory.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md123"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md147"></a>
 4. Generating Coverage Reports (GCOV + LCOV)</h2>
 <p>A typical workflow on Linux/macOS is:</p>
 <ol type="1">
@@ -222,7 +222,7 @@ What this does:</h3>
 <p>Note: The exact script name and paths may vary in your repository,\ but the idea remains: <b>configure with coverage → build → run tests → lcov + genhtml.</b> </p>
 </blockquote>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md125"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md149"></a>
 5. Typical Output Layout</h2>
 <p>Assuming the script writes to <span class="tt">site/coverage</span>, you get:</p>
 <ul>
@@ -236,7 +236,7 @@ What this does:</h3>
 </ul>
 <p>See the <b>Doxygen</b> and <b>Unit Testing</b> documentation pages for how to wire everything together in a unified <span class="tt">site/index.html</span>.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md127"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md151"></a>
 6. Usage Summary</h2>
 <ol type="1">
 <li><p class="startli">Configure for coverage:</p>

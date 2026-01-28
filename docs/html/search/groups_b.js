@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['setup_0',['Repository Setup',['../group__CG__01__RepositorySetup.html',1,'']]],
-  ['structure_1',['Structure',['../group__CG__02__DirectoryStructure.html',1,'Directory Structure'],['../group__ExampleLesson__02__RepositoryStructure.html',1,'Repository Structure']]],
-  ['summary_2',['Lesson Summary',['../group__ExampleLesson__10__Summary.html',1,'']]]
+  ['repository_20purpose_0',['Repository Purpose',['../group__ExampleLesson__01__RepositoryPurpose.html',1,'']]],
+  ['repository_20setup_1',['Repository Setup',['../group__CG__01__RepositorySetup.html',1,'']]],
+  ['repository_20structure_2',['Repository Structure',['../group__ExampleLesson__02__RepositoryStructure.html',1,'']]],
+  ['running_20executables_3',['Running Executables',['../group__CG__LocalWorkflow__03__RunningExecutables.html',1,'']]]
 ];

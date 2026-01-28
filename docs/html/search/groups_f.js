@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['walkthrough_0',['Boilerplate Code Walkthrough',['../group__ExampleLesson__09__Boilerplate.html',1,'']]],
-  ['why_20use_20this_20template_1',['Why use this template',['../group__ExampleLesson__08__WhyUseThisTemplate.html',1,'']]],
-  ['workflow_2',['Workflow',['../group__CG__04__GitHubWorkflow.html',1,'Github Workflow'],['../group__CG__03__LocalWorkflow.html',1,'Local Workflow']]]
+  ['vs_20public_20api_0',['Private Vs Public API',['../group__ExampleLesson__04__PrivateVsPublic.html',1,'']]],
+  ['vs_20unit_20tests_1',['Examples vs Unit Tests',['../group__ExampleLesson__05__ExamplesVsUnitTests.html',1,'']]]
 ];

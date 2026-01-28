@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('group__CG__LocalWorkflow__01__Building.html','',''); });
+$(function(){initNavTree('group__CG__LocalWorkflow__02__Building.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -94,14 +94,14 @@ $(function(){initNavTree('group__CG__LocalWorkflow__01__Building.html','',''); }
 <div class="dynheader">
 Collaboration diagram for Building:</div>
 <div class="dyncontent">
-<div class="center"><img src="group__CG__LocalWorkflow__01__Building.png" border="0" usemap="#agroup____CG____LocalWorkflow____01____Building" loading="lazy" alt=""/></div>
-<map name="agroup____CG____LocalWorkflow____01____Building" id="agroup____CG____LocalWorkflow____01____Building">
+<div class="center"><img src="group__CG__LocalWorkflow__02__Building.png" border="0" usemap="#agroup____CG____LocalWorkflow____02____Building" loading="lazy" alt=""/></div>
+<map name="agroup____CG____LocalWorkflow____02____Building" id="agroup____CG____LocalWorkflow____02____Building">
 <area shape="rect" href="group__CG__03__LocalWorkflow.html" title=" " alt="" coords="5,5,125,31"/>
 <area shape="rect" title=" " alt="" coords="173,5,248,31"/>
 </map>
 </div>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md41"></a>
-Building the Project Locally</h1>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
+Build the Project Locally</h1>
 <p>Part of the Local Workflow Documentation</p>
 <p>This document is part of the <b>local workflow</b> for the C++ course. Here you will learn:</p>
 <ul>
@@ -117,29 +117,29 @@ Building the Project Locally</h1>
 <li>The student works inside <span class="tt">student/</span></li>
 </ul>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md43"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
 Project Structure Overview</h2>
 <p>The repository is organized as follows:</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md44"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
 <span class="tt">course/</span></h3>
 <p>Reference code from the instructor (example implementations, tests, utilities). Students read this code but do not modify it.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md45"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
 <span class="tt">student/</span></h3>
 <p>The code students must complete. All student solutions, their own tests, and their examples live here.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md46"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 <span class="tt">cmake/</span></h3>
 <p>Helper CMake modules.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md47"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
 <span class="tt">docs/</span></h3>
 <p>Documentation written in Doxygen format (<span class="tt">.dox</span> or <span class="tt">.md</span>).</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md48"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
 <span class="tt">scripts/</span></h3>
 <p>Automation scripts for testing, coverage, configuration, and documentation.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md49"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
 <span class="tt">build/</span></h3>
 <p>Directory generated automatically by CMake during compilation.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md51"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
 Manual Compilation with CMake</h2>
 <p>To understand what happens internally, you can run the commands manually.</p>
 <p>From the repository root:</p>
@@ -162,7 +162,7 @@ Manual Compilation with CMake</h2>
 <li><span class="tt">build/StudentExample_target</span></li>
 </ul>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md53"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
 Compilation Using Scripts</h2>
 <p>The <span class="tt">scripts/</span> folder contains helper scripts to simplify the workflow.</p>
 <p>On Linux/macOS, you can run:</p>
@@ -197,7 +197,7 @@ Compilation Using Scripts</h2>
 <div class="line">echo &quot;✔ Tests finished.&quot;</div>
 </div><!-- fragment --><p>The idea is to allow fast iteration without remembering every CMake command, while still enabling you to inspect the scripts to understand what happens <em>under the hood</em>.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md55"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
 Notes for Windows Users</h2>
 <p>On Windows, we recommend using <b>PowerShell</b> with <span class="tt">.ps1</span> scripts. An equivalent to <span class="tt">run_tests.sh</span> would be:</p>
 <div class="fragment"><div class="line"># scripts/run_tests.ps1</div>

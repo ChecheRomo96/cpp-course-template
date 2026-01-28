@@ -4,5 +4,5 @@ var searchData=
   ['code_20walkthrough_1',['Boilerplate Code Walkthrough',['../group__ExampleLesson__09__Boilerplate.html',1,'']]],
   ['course_20guide_2',['Course Guide',['../group__CourseGuide.html',1,'']]],
   ['course_20lessons_3',['Course Lessons',['../group__CourseLessons.html',1,'']]],
-  ['coverage_20testing_4',['Coverage Testing',['../group__CG__LocalWorkflow__04__CoverageTesting.html',1,'']]]
+  ['coverage_20testing_4',['Coverage Testing',['../group__CG__LocalWorkflow__05__CoverageTesting.html',1,'']]]
 ];

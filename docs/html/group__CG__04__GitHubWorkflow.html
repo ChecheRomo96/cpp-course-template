@@ -102,7 +102,7 @@ Collaboration diagram for Github Workflow:</div>
 </div>
 <p>This page explains how GitHub Actions, CI testing, and documentation publishing work in the C++ Course Template. It includes setup steps for both <b>students</b> and <b>instructors</b>, since <b>each fork</b> of the template can publish its own GitHub Pages documentation site.</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md144"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md183"></a>
 1.0 Purpose of the GitHub Workflow</h1>
 <p>The repository contains CI workflows under:</p>
 <div class="fragment"><div class="line">.github/workflows/</div>
@@ -125,12 +125,12 @@ Collaboration diagram for Github Workflow:</div>
 </li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md146"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md185"></a>
 2.0 Initial Setup — Students <b>and</b> Instructors</h1>
 <p>GitHub Pages <b>cannot be enabled on an empty repository</b>.</p>
 <p>A repository must contain at least one commit before the Pages settings appear. Forks already contain commits, so students normally skip the initialization.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md148"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md187"></a>
 2.1 Initial Commit (Only for Manual Repositories)</h2>
 <p>If you created the repository manually:</p>
 <div class="fragment"><div class="line">git init</div>
@@ -142,7 +142,7 @@ Collaboration diagram for Github Workflow:</div>
 </div><!-- fragment --><p>After this first push, GitHub Pages becomes available.</p>
 <p>Students who fork the instructor repo do not need this step.*</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md150"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md189"></a>
 2.2 Enabling GitHub Pages (Students &amp; Instructors)</h1>
 <p>To publish documentation automatically:</p>
 <ol type="1">
@@ -171,17 +171,17 @@ Collaboration diagram for Github Workflow:</div>
 </li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md152"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md191"></a>
 2.3 GitHub Pages URLs</h1>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md153"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md192"></a>
 Student fork documentation:</h3>
 <div class="fragment"><div class="line">https:<span class="comment">//&lt;your-username&gt;.github.io/&lt;course_name&gt;/</span></div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md154"></a>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md193"></a>
 Instructor documentation:</h3>
 <div class="fragment"><div class="line">https:<span class="comment">//&lt;instructor-username&gt;.github.io/&lt;course_name&gt;/</span></div>
 </div><!-- fragment --><p>Each student can publish their <b>own version</b> of the documentation, which updates automatically when they push commits.</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md156"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md195"></a>
 2.4 Why Students Should Enable GitHub Pages</h1>
 <p>Publishing documentation helps students:</p>
 <ul>
@@ -198,11 +198,11 @@ Instructor documentation:</h3>
 </ul>
 <p>This mirrors real software engineering environments where each developer generates and publishes internal docs.</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md158"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md197"></a>
 3.0 Understanding the CI Workflows</h1>
 <p>The repository provides two major workflow files.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md160"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md199"></a>
 3.1 <span class="tt">ci.yml</span> — Main CI Pipeline</h2>
 <p>This workflow:</p>
 <ul>
@@ -226,7 +226,7 @@ Instructor documentation:</h3>
 </li>
 </ul>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md162"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md201"></a>
 3.2 <span class="tt">docs.yml</span> — Documentation Deployment</h2>
 <p>This workflow:</p>
 <ol type="1">
@@ -239,7 +239,7 @@ Instructor documentation:</h3>
 </ol>
 <p>Once deployed, GitHub Pages will automatically update the site whenever the workflow runs again on new commits.</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md164"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md203"></a>
 4.0 Student Workflow</h1>
 <p>Students typically:</p>
 <ol type="1">
@@ -263,7 +263,7 @@ Instructor documentation:</h3>
 </ol>
 <p>This gives immediate feedback and real-world experience with CI/CD pipelines.</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md166"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md205"></a>
 5.0 Instructor Workflow</h1>
 <p>Instructors typically:</p>
 <ul>
@@ -284,7 +284,7 @@ Instructor documentation:</h3>
 <div class="line">git push origin main</div>
 </div><!-- fragment --><p>This preserves student progress while bringing in new lessons or fixes.</p>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md168"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md207"></a>
 6.0 Summary</h1>
 <p>GitHub Workflow integration provides:</p>
 <ul>
